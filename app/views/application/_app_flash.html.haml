@@ -1,0 +1,9 @@
+- if !flash.blank?
+  .flash
+    - if flash[:error]
+      .error
+        =flash[:error]
+
+    - elsif flash[:notice]
+      .notice
+        =flash[:notice]

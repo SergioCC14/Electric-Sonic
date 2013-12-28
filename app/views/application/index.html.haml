@@ -1,0 +1,6 @@
+- if !signed_in? 
+  = render :partial => 'application/login_form'
+- else 
+  = render :partial => 'users/dashboard'  
+
+

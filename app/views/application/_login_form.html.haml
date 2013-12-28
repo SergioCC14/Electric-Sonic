@@ -1,0 +1,24 @@
+%div{:style => 'margin-top:50px;'}
+.login_form
+
+  .initial_text="Inicio de sesión para TFC Automatic 3.1"
+  = form_for(:session, url: sessions_path, html: {style: 'margin: 0px;'}) do |f|
+    %table
+      %tr
+        %td
+          %label Nombre
+        %td
+          = text_field_tag :nombre, nil, :class => 'default_field', :placeholder => 'Nombre'
+      %tr
+        %td
+          %label Contraseña
+        %td
+          = password_field_tag :pass, nil, :class => 'default_field', :placeholder => 'Contraseña'
+
+    %div{:style => 'float: right;'}
+      = link_to("", :class => 'btn', :onclick => "$('#input_new_session').click()", :remote => true) do
+        ="OK"
+
+      = f.submit "", :style => 'display:none' ,:id => 'input_new_session'
+
+    .clearfix

@@ -1,0 +1,79 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ body {
+  background-color: #3A6EA5;
+  color: black;
+  margin: auto auto;
+  font-size: 14px;
+  font-family: helvetica, verdana, arial sans-serif;
+ }
+
+input {
+  display: inline-block;
+}
+
+.flash {
+  padding: 10px;
+  text-align: center;
+  .error {
+    display: inline-block;
+    background-color: navy;
+    padding: 5px 10px;
+    color: white;
+    margin: auto;
+  }
+
+  .notice {
+    display: inline-block;
+    background-color: InfoBackground;
+    padding: 5px 10px;
+    color: #3D3D3D;
+    margin: auto;
+  }
+}
+
+.login_form {
+  margin: auto;
+  width: 400px;
+  background-color: #C0C0C0;
+  padding: 5px;
+  border: 4px double #000000;
+    .initial_text {
+      padding: 10px;
+      text-align: center;
+  }
+
+}
+
+.btn {
+  padding: 4px 5px 2px 5px;
+  background-color: #C0C0C0;
+  border: 1px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  width: 80px;
+  display: inline-block;
+  
+}
+
+.clearfix{
+  clear: both;
+  height: 1px
+}
+
+

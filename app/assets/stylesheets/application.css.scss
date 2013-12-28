@@ -44,17 +44,9 @@ input {
   }
 }
 
-.login_form {
-  margin: auto;
-  width: 400px;
-  background-color: #C0C0C0;
-  padding: 5px;
-  border: 4px double #000000;
-    .initial_text {
-      padding: 10px;
-      text-align: center;
-  }
-
+.clearfix{
+  clear: both;
+  height: 1px
 }
 
 .btn {
@@ -71,9 +63,31 @@ input {
   
 }
 
-.clearfix{
-  clear: both;
-  height: 1px
+.login_form {
+  margin: auto;
+  width: 400px;
+  background-color: #C0C0C0;
+  padding: 5px;
+  border: 4px double #000000;
+    .initial_text {
+      padding: 10px;
+      text-align: center;
+  }
 }
 
+.full_container {
+  background-color: #C0C0C0;
+  margin: 20px auto;
+  min-width: 500px;
+  max-width: 800px;
+  min-height: 300px;
+  padding: 2px;
+  border: solid 1px black;
+}
+
+.window {
+  border: solid 1px black;
+  background-color: #FFF;
+  min-height: 300px;
+}
 

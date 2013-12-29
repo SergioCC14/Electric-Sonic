@@ -1,4 +1,9 @@
 .header_window
   .bar
     .title_for_window= title
-    / .x_for_window="X"
+    - if defined?(close)
+      .x_for_window="X"
+      :javascript
+        $('.x_for_window').click(function () {
+          $('.x_for_window').parent().parent().parent().parent().remove();
+        })

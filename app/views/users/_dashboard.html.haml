@@ -26,6 +26,15 @@
       .fa.fa-folder.listados
       .title="Listados"
 
+  #place_for_window_in_holder
+
+    / Cuando lances una ventana, tienes que montar esta estructura
+    - if false
+      .container
+        .window_in_holder.window
+          = render :partial => 'application/header_window', :locals => {:title => 'Alumnos', :close => 'alumnos'}
+
+
 :javascript
   function selected(id) {
     $('.icon').removeClass('selected');

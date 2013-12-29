@@ -1,25 +1,23 @@
 #right_column_for_alumnos.right_column
-  %h2= "Modificacion de Alumno"
+  %h2= "Modificacion de Tribunales"
 
   %table.table_fow_window_in_holder
     %tr
-      %th="Matricula"
-      %th="DNI"
-      %th="Nombre"
-      %th="Apellidos"
+      %th="Nº Tribunal"
+      %th="Lugar del Examen"
+      %th="Nº Componentes"
 
-    - for alumno in @alumnos
+    - for tribunal in @tribunals
       %tr
-        = form_for(alumno) do |f|
+        = form_for(tribunal) do |f|
       
-          %td= f.text_field :id, :placeholder => "Nº Matricula", :disabled => true
-          %td= f.text_field :dni, :placeholder => "DNI"
-          %td= f.text_field :nombre, :placeholder => "Nombre"
-          %td= f.text_field :apellidos, :placeholder => "Apellidos"
+          %td= f.text_field :id, :placeholder => "Nº Tribunal", :disabled => true
+          %td= f.text_field :lugar_examen, :placeholder => "Lugar del Examen", :style => 'width: 120px'
+          %td= f.text_field :num_componentes, :placeholder => "Nº Componentes", :disabled => true, :style => 'width: 120px'
           %td
-            = link_to("", :class => 'btn', :onclick => "$('#submit_alumno_#{alumno.id}').click()", :remote => true) do
+            = link_to("", :class => 'btn', :onclick => "$('#submit_alumno_#{tribunal.id}').click()", :remote => true) do
               ="Guardar"
-            = f.submit "", :style => 'display:block' ,:id => "submit_alumno_#{alumno.id}"
+            = f.submit "", :style => 'display:block' ,:id => "submit_alumno_#{tribunal.id}"
           %td
-            = link_to(alumno_path(alumno), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?") do
+            = link_to(tribunal_path(tribunal), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?") do
               ="Eliminar"

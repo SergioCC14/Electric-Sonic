@@ -1,6 +1,6 @@
 class Tfg < ActiveRecord::Base
 
-  attr_accessible :name, :password
+  attr_accessible :tema, :fecha_comienzo
 
 
 end

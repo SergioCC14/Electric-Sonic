@@ -1,25 +1,25 @@
 #right_column_for_alumnos.right_column
-  %h2= "Modificacion de Alumno"
+  %h2= "Modificacion de Trabajos de Fin de Grado"
 
   %table.table_fow_window_in_holder
     %tr
-      %th="Matricula"
-      %th="DNI"
-      %th="Nombre"
-      %th="Apellidos"
-
-    - for alumno in @alumnos
-      %tr
-        = form_for(alumno) do |f|
-      
-          %td= f.text_field :id, :placeholder => "Nº Matricula", :disabled => true
-          %td= f.text_field :dni, :placeholder => "DNI"
-          %td= f.text_field :nombre, :placeholder => "Nombre"
-          %td= f.text_field :apellidos, :placeholder => "Apellidos"
-          %td
-            = link_to("", :class => 'btn', :onclick => "$('#submit_alumno_#{alumno.id}').click()", :remote => true) do
-              ="Guardar"
-            = f.submit "", :style => 'display:block' ,:id => "submit_alumno_#{alumno.id}"
-          %td
-            = link_to(alumno_path(alumno), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?") do
-              ="Eliminar"
+      %th="Nª Orden"
+      %th="Tema"
+      %th="Fecha Comienzo"
+    
+    - if !@tfgs.blank?
+      - for tfg in @tfgs
+        %tr
+          = form_for(tfg) do |f|
+        
+            %td= f.text_field :id, :placeholder => "Nª Orden", :disabled => true
+            %td= f.text_field :tema, :placeholder => "DNI"
+            %td= f.text_field :fecha_comienzo, :placeholder => "Fecha Comienzo"
+          
+            %td
+              = link_to("", :class => 'btn', :onclick => "$('#submit_tfg_#{tfg.id}').click()", :remote => true) do
+                ="Guardar"
+              = f.submit "", :style => 'display:block' ,:id => "submit_tfg_#{tfg.id}"
+            %td
+              = link_to(tfg_path(tfg), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?") do
+                ="Eliminar"

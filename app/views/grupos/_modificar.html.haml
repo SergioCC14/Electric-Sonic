@@ -1,25 +1,24 @@
 #right_column_for_alumnos.right_column
-  %h2= "Modificacion de Alumno"
+  %h2= "Modificacion de Grupos de Investigacion"
 
   %table.table_fow_window_in_holder
     %tr
-      %th="Matricula"
-      %th="DNI"
+      %th="Nº Grupo"
       %th="Nombre"
-      %th="Apellidos"
+      %th="Nº Componentes"
 
-    - for alumno in @alumnos
-      %tr
-        = form_for(alumno) do |f|
-      
-          %td= f.text_field :id, :placeholder => "Nº Matricula", :disabled => true
-          %td= f.text_field :dni, :placeholder => "DNI"
-          %td= f.text_field :nombre, :placeholder => "Nombre"
-          %td= f.text_field :apellidos, :placeholder => "Apellidos"
-          %td
-            = link_to("", :class => 'btn', :onclick => "$('#submit_alumno_#{alumno.id}').click()", :remote => true) do
-              ="Guardar"
-            = f.submit "", :style => 'display:block' ,:id => "submit_alumno_#{alumno.id}"
-          %td
-            = link_to(alumno_path(alumno), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?") do
-              ="Eliminar"
+    - if !@grupos.blank?
+      - for grupo in @grupos
+        %tr
+          = form_for(grupo) do |f|
+        
+            %td= f.text_field :id, :placeholder => "Nº Grupo", :disabled => true
+            %td= f.text_field :nombre, :placeholder => "Nombre", :style => 'width: 120px'
+            %td= f.text_field :num_componentes, :placeholder => "Nº Componentes", :disabled => true, :style => 'width: 120px'
+            %td
+              = link_to("", :class => 'btn', :onclick => "$('#submit_grupo_#{grupo.id}').click()", :remote => true) do
+                ="Guardar"
+              = f.submit "", :style => 'display:block' ,:id => "submit_grupo_#{grupo.id}"
+            %td
+              = link_to(grupo_path(grupo), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?") do
+                ="Eliminar"

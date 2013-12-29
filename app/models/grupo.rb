@@ -1,6 +1,6 @@
 class Grupo < ActiveRecord::Base
 
-  attr_accessible :name, :password
+  attr_accessible :nombre, :num_componentes
 
 
 end

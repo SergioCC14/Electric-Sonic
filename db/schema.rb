@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131228200612) do
+ActiveRecord::Schema.define(:version => 20131229004203) do
 
   create_table "alumnos", :force => true do |t|
     t.integer  "num_matricula"
@@ -20,6 +20,23 @@ ActiveRecord::Schema.define(:version => 20131228200612) do
     t.string   "apellidos"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "grupos", :force => true do |t|
+    t.integer  "num_grupo"
+    t.string   "nombre"
+    t.integer  "num_componentes"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "profesors", :force => true do |t|
+    t.string   "dni"
+    t.string   "nombre"
+    t.string   "apellidos"
+    t.string   "domicilio"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sessions", :force => true do |t|
@@ -31,6 +48,22 @@ ActiveRecord::Schema.define(:version => 20131228200612) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "tfgs", :force => true do |t|
+    t.string   "tema"
+    t.integer  "num_orden"
+    t.date     "fecha_comienzo"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "tribunals", :force => true do |t|
+    t.integer  "num_tribunal"
+    t.string   "lugar_examen"
+    t.integer  "num_componentes"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

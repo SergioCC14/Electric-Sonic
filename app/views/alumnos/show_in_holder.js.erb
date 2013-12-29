@@ -1,0 +1,3 @@
+$('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Alumnos', :close => 'alumnos'}) %>');
+
+$('#window_for_Alumnos').append('<%= escape_javascript render(:partial => "alumnos/show_in_holder", :locals => {:alumnos => @alumnos}) %>');

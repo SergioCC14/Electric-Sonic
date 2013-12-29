@@ -1,0 +1,21 @@
+#right_column.right_column
+  %h2= "Formulario para Nuevos Profesores"
+
+  = form_for(@profesor) do |f|
+    %p
+      = f.label :dni, "DNI"
+      = f.text_field :dni, :placeholder => "DNI"
+    %p
+      = f.label :nombre, "Nombre"
+      = f.text_field :nombre, :placeholder => "Nombre"
+    %p
+      = f.label :apellidos, "Apellidos"
+      = f.text_field :apellidos, :placeholder => "Apellidos"
+    %p
+      = f.label :domicilio, "Domicilio"
+      = f.text_field :domicilio, :placeholder => "Domicilio"
+
+    = link_to("", :class => 'btn', :onclick => "$('#submit_profesor').click()", :remote => true) do
+      ="Guardar"
+
+    = f.submit "", :style => 'display:none' ,:id => 'submit_profesor'

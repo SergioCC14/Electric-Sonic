@@ -1,0 +1,5 @@
+.container
+  .window_in_holder.window
+    = render :partial => 'application/header_window', :locals => {:title => title, :close => close}
+
+    %div{:id => "window_for_#{title}"}

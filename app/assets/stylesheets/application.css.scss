@@ -20,6 +20,11 @@
   font-family: helvetica, verdana, arial sans-serif;
  }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
 input {
   display: inline-block;
 }
@@ -89,6 +94,7 @@ input {
   border: solid 1px black;
   background-color: #FFF;
   min-height: 300px;
+
 }
 
 .icon{
@@ -151,6 +157,21 @@ input {
       cursor: pointer;
     }
   }
+  .bar.second_bar {
+    background-color: #BFC4C8;
+    text-align: left;
+    padding: 2px;
+    a.opt {
+      margin-left: -2px;
+      padding: 2px;
+      color: black;
+      text-decoration: none;
+      cursor: default;
+    }
+    a:hover {
+      background-color: #8E9397;
+    }
+  }
 }
 
 .container {
@@ -165,9 +186,34 @@ input {
 
   .window_in_holder {
     position: relative;
-    min-width: 600px;
+    min-width: 690px;
+    .left_column {
+      display: inline-block;
+      float: left;
+      background-color: #BFC4C8;
+      width: 100px;
+      height: 280px;
+      border-right: 1px solid black;
+      a.opt_col {
+        display: block;
+        padding: 5px;
+        border-bottom: 1px solid black;
+      }
+      a:hover {
+        cursor: default;
+        background-color: #8E9397;
+      }
+    }
+    .right_column {
+      display: inline-block;
+      padding-left: 5px;
+      max-width: 460px;
+    }  
   }
 }
 
+table.table_fow_window_in_holder {
+  input {width:83px;}
 
+}
 

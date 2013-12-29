@@ -1,28 +1,28 @@
 .full_container
   .window
-    = render :partial => 'application/header_window', :locals => {:title => 'TFC Manager 3.1'}
+    = render :partial => 'application/header_window', :locals => {:title => 'TFG Manager 3.1'}
 
-    #alumnos.icon{:onclick => "selected($('#alumnos'))", :ondblclick => 'alert("Abrir ventana")'}
+    #alumnos.icon{:onclick => "selected($('#alumnos'))", :ondblclick => "$.getScript('#{show_in_holder_alumnos_path}')"}
       .fa.fa-rocket.alumnos
       .title="Alumnos"
 
-    #profesores.icon{:onclick => "selected($('#profesores'))", :ondblclick => 'alert("Abrir ventana")'}
+    #profesores.icon{:onclick => "selected($('#profesores'))", :ondblclick => "$.getScript('#{show_in_holder_profesors_path}')"}
       .fa.fa-briefcase.profesores
       .title="Profesores"
 
-    #tfg.icon{:onclick => "selected($('#tfg'))", :ondblclick => 'alert("Abrir ventana")'}
+    #tfg.icon{:onclick => "selected($('#tfg'))", :ondblclick => "$.getScript('#{show_in_holder_tfgs_path}')"}
       .fa.fa-file.tfg
       .title="Trabajos Fin de Grado"
 
-    #tribunales.icon{:onclick => "selected($('#tribunales'))", :ondblclick => 'alert("Abrir ventana")'}
+    #tribunales.icon{:onclick => "selected($('#tribunales'))", :ondblclick => "$.getScript('#{show_in_holder_tribunals_path}')"}
       .fa.fa-gavel.tribunales
       .title="Tribunales"
 
-    #investigacion.icon{:onclick => "selected($('#investigacion'))", :ondblclick => 'alert("Abrir ventana")'}
+    #investigacion.icon{:onclick => "selected($('#investigacion'))", :ondblclick => "$.getScript('#{show_in_holder_grupos_path}')"}
       .fa.fa-group.investigacion
       .title="Grupos de Investigación"
 
-    #listados.icon{:onclick => "selected($('#listados'))", :ondblclick => 'alert("Abrir ventana")'}
+    #listados.icon{:onclick => "selected($('#listados'))", :ondblclick => "$.getScript('#{show_in_holder_alumnos_path}')"}
       .fa.fa-folder.listados
       .title="Listados"
 

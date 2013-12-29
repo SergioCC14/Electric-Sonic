@@ -1,0 +1,21 @@
+#right_column.right_column
+  %h2= "Formulario para Nuevos Alumnos"
+
+  = form_for(@alumno) do |f|
+    %p
+      = f.label :num_matricula, "Nº Matricula"
+      = f.text_field :num_matricula, :placeholder => "Nº Matricula"
+    %p
+      = f.label :dni, "Dni"
+      = f.text_field :dni, :placeholder => "DNI"
+    %p
+      = f.label :nombre, "Nombre"
+      = f.text_field :nombre, :placeholder => "Nombre"
+    %p
+      = f.label :apellidos, "Apellidos"
+      = f.text_field :apellidos, :placeholder => "Apellidos"
+
+    = link_to("", :class => 'btn', :onclick => "$('#submit_alumno').click()", :remote => true) do
+      ="Guardar"
+
+    = f.submit "", :style => 'display:none' ,:id => 'submit_alumno'

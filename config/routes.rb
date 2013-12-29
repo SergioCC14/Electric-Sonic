@@ -3,6 +3,47 @@ ElectricSonic::Application.routes.draw do
   resources :users
   resources :sessions
 
+  resources :alumnos do
+    collection do
+      get :show_in_holder
+      get :alta
+      get :modificar
+    end
+  end
+  
+  resources :profesors do
+    collection do
+      get :show_in_holder
+      get :alta
+      get :modificar
+    end
+  end
+
+  resources :tfgs do
+    collection do
+      get :show_in_holder
+      get :alta
+      get :modificar
+    end
+  end
+
+  resources :tribunals do
+    collection do
+      get :show_in_holder
+      get :alta
+      get :modificar
+    end
+  end
+
+  resources :grupos do
+    collection do
+      get :show_in_holder
+      get :alta
+      get :modificar
+    end
+  end
+
+
   match '/signout', :to => 'sessions#destroy', :as => 'signout'
   match '/sessions', :to => 'sessions#index', :as => 'login', :path => '/login'
 

@@ -1,0 +1,55 @@
+                 users GET    /users(.:format)                  users#index
+                       POST   /users(.:format)                  users#create
+              new_user GET    /users/new(.:format)              users#new
+             edit_user GET    /users/:id/edit(.:format)         users#edit
+                  user GET    /users/:id(.:format)              users#show
+                       PUT    /users/:id(.:format)              users#update
+                       DELETE /users/:id(.:format)              users#destroy
+              sessions GET    /sessions(.:format)               sessions#index
+                       POST   /sessions(.:format)               sessions#create
+           new_session GET    /sessions/new(.:format)           sessions#new
+          edit_session GET    /sessions/:id/edit(.:format)      sessions#edit
+               session GET    /sessions/:id(.:format)           sessions#show
+                       PUT    /sessions/:id(.:format)           sessions#update
+                       DELETE /sessions/:id(.:format)           sessions#destroy
+show_in_holder_alumnos GET    /alumnos/show_in_holder(.:format) alumnos#show_in_holder
+          alta_alumnos GET    /alumnos/alta(.:format)           alumnos#alta
+     modificar_alumnos GET    /alumnos/modificar(.:format)      alumnos#modificar
+               alumnos GET    /alumnos(.:format)                alumnos#index
+                       POST   /alumnos(.:format)                alumnos#create
+            new_alumno GET    /alumnos/new(.:format)            alumnos#new
+           edit_alumno GET    /alumnos/:id/edit(.:format)       alumnos#edit
+                alumno GET    /alumnos/:id(.:format)            alumnos#show
+                       PUT    /alumnos/:id(.:format)            alumnos#update
+                       DELETE /alumnos/:id(.:format)            alumnos#destroy
+             profesors GET    /profesors(.:format)              profesors#index
+                       POST   /profesors(.:format)              profesors#create
+          new_profesor GET    /profesors/new(.:format)          profesors#new
+         edit_profesor GET    /profesors/:id/edit(.:format)     profesors#edit
+              profesor GET    /profesors/:id(.:format)          profesors#show
+                       PUT    /profesors/:id(.:format)          profesors#update
+                       DELETE /profesors/:id(.:format)          profesors#destroy
+                  tfgs GET    /tfgs(.:format)                   tfgs#index
+                       POST   /tfgs(.:format)                   tfgs#create
+               new_tfg GET    /tfgs/new(.:format)               tfgs#new
+              edit_tfg GET    /tfgs/:id/edit(.:format)          tfgs#edit
+                   tfg GET    /tfgs/:id(.:format)               tfgs#show
+                       PUT    /tfgs/:id(.:format)               tfgs#update
+                       DELETE /tfgs/:id(.:format)               tfgs#destroy
+             tribunals GET    /tribunals(.:format)              tribunals#index
+                       POST   /tribunals(.:format)              tribunals#create
+          new_tribunal GET    /tribunals/new(.:format)          tribunals#new
+         edit_tribunal GET    /tribunals/:id/edit(.:format)     tribunals#edit
+              tribunal GET    /tribunals/:id(.:format)          tribunals#show
+                       PUT    /tribunals/:id(.:format)          tribunals#update
+                       DELETE /tribunals/:id(.:format)          tribunals#destroy
+                grupos GET    /grupos(.:format)                 grupos#index
+                       POST   /grupos(.:format)                 grupos#create
+             new_grupo GET    /grupos/new(.:format)             grupos#new
+            edit_grupo GET    /grupos/:id/edit(.:format)        grupos#edit
+                 grupo GET    /grupos/:id(.:format)             grupos#show
+                       PUT    /grupos/:id(.:format)             grupos#update
+                       DELETE /grupos/:id(.:format)             grupos#destroy
+               signout        /signout(.:format)                sessions#destroy
+                 login        /login(.:format)                  sessions#index
+                  root        /                                 application#index

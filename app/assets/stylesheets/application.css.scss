@@ -78,7 +78,6 @@ input {
 .full_container {
   background-color: #C0C0C0;
   margin: 20px auto;
-  min-width: 500px;
   max-width: 800px;
   min-height: 300px;
   padding: 2px;
@@ -90,4 +89,59 @@ input {
   background-color: #FFF;
   min-height: 300px;
 }
+
+.icon{
+  display: inline-block;
+  text-align: center;
+  max-width: 85px;
+  margin: 20px;
+  vertical-align: top;
+  .fa {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .fa.alumnos { color: #5F00AA;}
+  .fa.profesores {color: #008000;}
+  .fa.tfg {color: #4285F4;}
+  .fa.tribunales {color: #DD4B39;}
+  .fa.investigacion {color: #F9B256;}
+  .fa.listados {color: #4DBFD9;}
+
+  .title {
+    padding: 2px 2px 0px 2px;
+    margin-top: 10px;
+  }
+}
+
+.icon:hover {
+  cursor: default;
+}
+
+.icon.selected {
+  opacity: 0.85;
+
+  .title {
+    border: 1px dashed #FFF;
+    margin: 9px -1px -1px -1px;
+    background-color: #2000A5;
+    color: #FFF;
+  }
+}
+
+.header_window {
+  .bar {
+    border-bottom: 1px solid #000;
+    background-color: #2800AB;
+    text-align: center;
+    .title_for_window {
+      color: #FFF;
+      padding: 4px 0px 1px 0px;
+    }
+  }
+  
+  
+
+}
+
+
 

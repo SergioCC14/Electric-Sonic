@@ -1,28 +1,39 @@
 .full_container
   .window
-    / = render :partial => 'application/header_window'
+    = render :partial => 'application/header_window', :locals => {:title => 'TFC Manager 3.1'}
 
-    .icon
-      .fa.fa-anchor
-      %i.fa.fa-rub
+    #alumnos.icon{:onclick => "selected($('#alumnos'))", :ondblclick => 'alert("Abrir ventana")'}
+      .fa.fa-rocket.alumnos
       .title="Alumnos"
 
-    .icon
-      %i.icono_en_cuestion
+    #profesores.icon{:onclick => "selected($('#profesores'))", :ondblclick => 'alert("Abrir ventana")'}
+      .fa.fa-briefcase.profesores
       .title="Profesores"
 
-    .icon
-      %i.icono_en_cuestion
+    #tfg.icon{:onclick => "selected($('#tfg'))", :ondblclick => 'alert("Abrir ventana")'}
+      .fa.fa-file.tfg
       .title="Trabajos Fin de Grado"
 
-    .icon
-      %i.icono_en_cuestion
+    #tribunales.icon{:onclick => "selected($('#tribunales'))", :ondblclick => 'alert("Abrir ventana")'}
+      .fa.fa-gavel.tribunales
       .title="Tribunales"
 
-    .icon
-      %i.icono_en_cuestion
+    #investigacion.icon{:onclick => "selected($('#investigacion'))", :ondblclick => 'alert("Abrir ventana")'}
+      .fa.fa-group.investigacion
       .title="Grupos de Investigación"
 
-    .icon
-      %i.icono_en_cuestion
+    #listados.icon{:onclick => "selected($('#listados'))", :ondblclick => 'alert("Abrir ventana")'}
+      .fa.fa-folder.listados
       .title="Listados"
+
+:javascript
+  function selected(id) {
+    $('.icon').removeClass('selected');
+    id.addClass('selected');
+  }
+
+  function deselect() {
+    $('.icon').removeClass('selected');
+  }
+
+

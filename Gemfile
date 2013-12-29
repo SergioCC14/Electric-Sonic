@@ -23,6 +23,3 @@ gem 'jquery-rails'
 
 # HAML
 gem 'haml'
-
-# Iconos
-gem 'font-awesome-sass'

@@ -1,4 +1,6 @@
-$('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Ayuda', :close => 'ayuda'}) %>');
+if ($('#window_for_ayuda').length == 0) {
+  $('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Ayuda', :close => 'ayuda'}) %>');
 
-$('#window_for_ayuda').append('<%= escape_javascript render(:partial => "application/ayuda") %>');
-$('.window_in_holder.window').addClass('help_menu')
+  $('#window_for_ayuda').append('<%= escape_javascript render(:partial => "application/ayuda") %>');
+  $('.window_in_holder.window').addClass('help_menu')
+}

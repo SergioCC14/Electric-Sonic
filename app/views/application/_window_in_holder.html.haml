@@ -1,5 +1,5 @@
 .container{:id => "window_in_holder_#{close}"}
-  .window_in_holder.window
+  .window_in_holder.window{:id => "inner_window_in_holder_#{close}"}
     = render :partial => 'application/header_window', :locals => {:title => title, :close => close}
 
     %div{:id => "window_for_#{close}"}

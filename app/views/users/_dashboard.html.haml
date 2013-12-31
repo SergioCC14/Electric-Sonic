@@ -1,4 +1,4 @@
-.full_container
+.full_container#main_window
   .window
     = render :partial => 'application/header_window', :locals => {:title => 'TFG Manager 3.1'}
 
@@ -22,12 +22,11 @@
       .fa.fa-group.investigacion
       .title="Grupos de Investigación"
 
-    #listados.icon{:onclick => "selected($('#listados'))", :ondblclick => "$.getScript('#{show_in_holder_alumnos_path}')"}
+    #listados.icon{:onclick => "selected($('#listados'))", :ondblclick => "$.getScript('#{listados_in_holder_path}')"}
       .fa.fa-folder.listados
       .title="Listados"
 
-  #place_for_window_in_holder
-
+  
     / Cuando lances una ventana, tienes que montar esta estructura
     - if false
       .container
@@ -45,4 +44,8 @@
     $('.icon').removeClass('selected');
   }
 
-
+  $(function() {
+    $( "#main_window" ).draggable({
+      handle: ".header_window"
+    });
+  });

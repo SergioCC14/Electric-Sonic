@@ -1,3 +1,5 @@
-$('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Alumnos', :close => 'alumnos'}) %>');
+if ($('#window_for_alumnos').length == 0) {
+  $('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Alumnos', :close => 'alumnos'}) %>');
 
-$('#window_for_alumnos').append('<%= escape_javascript render(:partial => "alumnos/show_in_holder", :locals => {:alumnos => @alumnos}) %>');
+  $('#window_for_alumnos').append('<%= escape_javascript render(:partial => "alumnos/show_in_holder", :locals => {:alumnos => @alumnos}) %>');
+}

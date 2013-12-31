@@ -1,3 +1,5 @@
-$('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Grupos de Investigacion', :close => 'grupos'}) %>');
+if ($('#window_for_grupos').length == 0) {
+  $('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Grupos de Investigacion', :close => 'grupos'}) %>');
 
-$('#window_for_grupos').append('<%= escape_javascript render(:partial => "grupos/show_in_holder", :locals => {:grupos => @grupos}) %>');
+  $('#window_for_grupos').append('<%= escape_javascript render(:partial => "grupos/show_in_holder", :locals => {:grupos => @grupos}) %>');
+}

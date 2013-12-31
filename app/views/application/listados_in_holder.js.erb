@@ -1,0 +1,5 @@
+if ($('#window_for_listados').length == 0) {
+  $('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Listados', :close => 'listados'}) %>');
+
+  $('#window_for_listados').append('<%= escape_javascript render(:partial => "application/listados_in_holder") %>');
+}

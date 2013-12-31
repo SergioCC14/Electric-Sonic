@@ -1,3 +1,5 @@
-$('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Tribunales', :close => 'tribunals'}) %>');
+if ($('#window_for_tribunals').length == 0) {
+  $('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Tribunales', :close => 'tribunals'}) %>');
 
-$('#window_for_tribunals').append('<%= escape_javascript render(:partial => "tribunals/show_in_holder", :locals => {:tribunals => @tribunals}) %>');
+  $('#window_for_tribunals').append('<%= escape_javascript render(:partial => "tribunals/show_in_holder", :locals => {:tribunals => @tribunals}) %>');
+}

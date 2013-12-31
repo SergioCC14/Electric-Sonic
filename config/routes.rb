@@ -43,6 +43,8 @@ ElectricSonic::Application.routes.draw do
     end
   end
 
+  match '/listados_in_holder', :to => 'application#listados_in_holder', :as => 'listados_in_holder'
+  match '/ayuda', :to => 'application#ayuda', :as => 'ayuda'
 
   match '/signout', :to => 'sessions#destroy', :as => 'signout'
   match '/sessions', :to => 'sessions#index', :as => 'login', :path => '/login'

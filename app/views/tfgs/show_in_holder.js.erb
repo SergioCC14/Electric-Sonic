@@ -1,3 +1,5 @@
-$('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Trabajos Fin de Grado', :close => 'tfgs'}) %>');
+if ($('#window_for_tfgs').length == 0) {
+  $('#place_for_window_in_holder').append('<%= escape_javascript render(:partial => "application/window_in_holder", :locals => {:title => 'Trabajos Fin de Grado', :close => 'tfgs'}) %>');
 
-$('#window_for_tfgs').append('<%= escape_javascript render(:partial => "tfgs/show_in_holder", :locals => {:tfgs => @tfgs}) %>');
+  $('#window_for_tfgs').append('<%= escape_javascript render(:partial => "tfgs/show_in_holder", :locals => {:tfgs => @tfgs}) %>');
+}

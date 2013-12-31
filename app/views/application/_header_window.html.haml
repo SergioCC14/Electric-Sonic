@@ -2,11 +2,9 @@
   .bar
     .title_for_window= title
     - if defined?(close)
-      .x_for_window="X"
-      :javascript
-        $('.x_for_window').click(function () {
-          $('.x_for_window').parent().parent().parent().parent().remove();
-        })
+      .x_for_window{:onclick => "$(this).parent().parent().parent().parent().remove()"}="X"
   - if !defined?(close)
     .bar.second_bar
       =link_to("Desconectar", signout_path, :class => 'opt')
+      %div{:style => 'display: inline-block; font-size: 14px; position: relative; top: 1px;'}="|"
+      =link_to("Ayuda", ayuda_path,:remote => true ,:class => 'opt')

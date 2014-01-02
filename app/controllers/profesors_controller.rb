@@ -23,7 +23,12 @@ class ProfesorsController < ApplicationController
   def alta
 
     @profesor = Profesor.new
-    @alumnos = Alumno.all
+
+    @alumnos = []
+
+    for alumno in Alumno.all
+      (Profesor.find_by_alumno_id(alumno.id)) ?  nil : @alumnos << alumno
+    end
 
     respond_to do |format|
       format.html { render  }

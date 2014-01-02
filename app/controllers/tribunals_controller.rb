@@ -23,7 +23,11 @@ class TribunalsController < ApplicationController
   def alta
 
     @tribunal = Tribunal.new
-    @tfgs = Tfg.all
+    @tfgs = []
+
+    for tfg in Tfg.all
+      (Tribunal.find_by_tfg_id(tfg.id)) ?  nil : @tfgs << tfg
+    end
 
     respond_to do |format|
       format.html { render  }

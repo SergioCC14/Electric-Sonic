@@ -23,7 +23,11 @@ class TfgsController < ApplicationController
   def alta
 
     @tfg = Tfg.new
-    @alumnos = Alumno.all
+    @alumnos = []
+
+    for alumno in Alumno.all
+      (Tfg.find_by_alumno_id(alumno.id)) ?  nil : @alumnos << alumno
+    end
 
     respond_to do |format|
       format.html { render  }

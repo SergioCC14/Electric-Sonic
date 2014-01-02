@@ -5,7 +5,10 @@
     %p
       = f.label :lugar_examen, "Lugar del Examen"
       = f.text_field :lugar_examen, :placeholder => "Lugar del examen"
-
+    
+    %p
+      = f.label :tfg, "Trabajo Fin de Grado"
+      = f.select :tfg_id, options_for_select(@tfgs.map{|t| [t.tema, t.id, :title => t.tema]}), {}, {:class => ''}
 
     = link_to("", :class => 'btn', :onclick => "$('#submit_tribunal').click()", :remote => true) do
       ="Guardar"

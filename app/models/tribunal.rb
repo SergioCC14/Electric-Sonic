@@ -1,17 +1,20 @@
 class Tribunal < ActiveRecord::Base
 
-  attr_accessible :lugar_examen, :num_componentes
+  attr_accessible :lugar_examen, :num_componentes, :tfg_id
 
   has_many :profesors
 
 	# Un tribunal puede tener varios tfg, un tfg solo tiene un tribunal.
-  has_many :tfg
+  has_one :tfg
 
   # Calcula componentes se lanza antes de guardarse
-  before_save :calcula_componentes
+  
+  # after_save :calcula_componentes
 
   def calcula_componentes
-    comp_actualizados = self.alumnos.count
+    raise self.profesors.count
+    comp_actualizados = self.profesors.count
+
     self.update_attributes(:num_componentes => comp_actualizados)
   end
 

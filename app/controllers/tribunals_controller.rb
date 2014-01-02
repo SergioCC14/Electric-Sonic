@@ -23,6 +23,7 @@ class TribunalsController < ApplicationController
   def alta
 
     @tribunal = Tribunal.new
+    @tfgs = Tfg.all
 
     respond_to do |format|
       format.html { render  }
@@ -64,7 +65,7 @@ class TribunalsController < ApplicationController
 
     respond_to do |format|
       if @tribunal.update_attributes(params[:tribunal])
-        format.html { redirect_to root_path, notice: 'Alumno actualizado.' }
+        format.html { redirect_to root_path, notice: 'Tribunal actualizado.' }
         format.js { redirect_to root_path }
       else
         format.html { render action: "edit" }

@@ -4,7 +4,7 @@ class Profesor < ActiveRecord::Base
 
     has_one :alumno
 
-    belongs_to :tribunal
+    has_many :tribunals
 
     # Pensa una manera para saber si un profesor es el que dirije el TFG al alumno o, simplemente, le ayuda
     

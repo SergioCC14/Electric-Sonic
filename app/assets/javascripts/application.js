@@ -19,7 +19,7 @@ function deselect() {
   $('.icon').removeClass('selected');
 }
 
-function checkSubmit(inputElement, event) {
+function submitOnEnter(inputElement, event) {
 	if(event.keyCode == 13) {
 		inputElement.form.submit();
 	}

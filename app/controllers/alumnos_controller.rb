@@ -23,6 +23,8 @@ class AlumnosController < ApplicationController
   def alta
 
     @alumno = Alumno.new
+    @profesors = Profesor.all
+    @grupos = Grupo.all
 
     respond_to do |format|
       format.html { render  }
@@ -32,6 +34,7 @@ class AlumnosController < ApplicationController
 
   # POST /users
   def create
+
     @alumno = Alumno.new(params[:alumno])
 
     respond_to do |format|

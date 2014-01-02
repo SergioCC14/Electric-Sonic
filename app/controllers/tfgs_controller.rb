@@ -23,6 +23,7 @@ class TfgsController < ApplicationController
   def alta
 
     @tfg = Tfg.new
+    @alumnos = Alumno.all
 
     respond_to do |format|
       format.html { render  }

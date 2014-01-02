@@ -3,9 +3,6 @@
 
   = form_for(@alumno) do |f|
     %p
-      = f.label :num_matricula, "Nº Matricula"
-      = f.text_field :num_matricula, :placeholder => "Nº Matricula"
-    %p
       = f.label :dni, "Dni"
       = f.text_field :dni, :placeholder => "DNI"
     %p
@@ -14,6 +11,16 @@
     %p
       = f.label :apellidos, "Apellidos"
       = f.text_field :apellidos, :placeholder => "Apellidos"
+
+    %p
+      = f.label :profesor, "Profesor"
+      = f.select :profesor_id, options_for_select(@profesors.map{|t| [t.nombre, t.id, :title => t.nombre]}), {}, {:class => ''}
+
+    %p
+      = f.label :grupo, "Grupo"
+      = f.select :grupo_id, options_for_select(@grupos.map{|t| [t.nombre, t.id, :title => t.nombre]}), {}, {:class => ''}
+
+
 
     = link_to("", :class => 'btn', :onclick => "$('#submit_alumno').click()", :remote => true) do
       ="Guardar"

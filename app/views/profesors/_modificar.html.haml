@@ -8,6 +8,7 @@
       %th="Nombre"
       %th="Apellidos"
       %th="Domicilio"
+      %th="Alumno"
 
     - if !@profesors.blank?
       - for profesor in @profesors
@@ -19,6 +20,9 @@
             %td= f.text_field :nombre, :placeholder => "Nombre"
             %td= f.text_field :apellidos, :placeholder => "Apellidos"
             %td= f.text_field :domicilio, :placeholder => "Domicilio"
+
+            %td= f.text_field :alumno, :placeholder => "No Disponible", :value => (!profesor.alumno.blank? ? profesor.alumno.nombre : nil), :disabled => true   
+
             %td
               = link_to("", :class => 'btn', :onclick => "$('#submit_profesor_#{profesor.id}').click()", :remote => true) do
                 ="Guardar"

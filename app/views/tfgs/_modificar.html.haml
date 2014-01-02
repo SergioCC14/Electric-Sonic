@@ -6,6 +6,7 @@
       %th="Nª Orden"
       %th="Tema"
       %th="Fecha Comienzo"
+      %th="Alumno"
     
     - if !@tfgs.blank?
       - for tfg in @tfgs
@@ -15,7 +16,9 @@
             %td= f.text_field :id, :placeholder => "Nª Orden", :disabled => true
             %td= f.text_field :tema, :placeholder => "DNI"
             %td= f.text_field :fecha_comienzo, :placeholder => "Fecha Comienzo"
-          
+            
+            %td= f.text_field :alumno, :placeholder => "No Disponible", :value => (!tfg.alumno.blank? ? tfg.alumno.nombre : nil), :disabled => true 
+
             %td
               = link_to("", :class => 'btn', :onclick => "$('#submit_tfg_#{tfg.id}').click()", :remote => true) do
                 ="Guardar"

@@ -23,6 +23,7 @@ class ProfesorsController < ApplicationController
   def alta
 
     @profesor = Profesor.new
+    @alumnos = Alumno.all
 
     respond_to do |format|
       format.html { render  }

@@ -11,19 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131229004203) do
+ActiveRecord::Schema.define(:version => 20140102170231) do
 
   create_table "alumnos", :force => true do |t|
-    t.integer  "num_matricula"
     t.string   "dni"
     t.string   "nombre"
     t.string   "apellidos"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "tfg_id"
+    t.integer  "grupo_id"
+    t.integer  "profesor_id"
   end
 
   create_table "grupos", :force => true do |t|
-    t.integer  "num_grupo"
     t.string   "nombre"
     t.integer  "num_componentes"
     t.datetime "created_at",      :null => false
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20131229004203) do
     t.string   "domicilio"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "alumno_id"
   end
 
   create_table "sessions", :force => true do |t|
@@ -51,18 +53,19 @@ ActiveRecord::Schema.define(:version => 20131229004203) do
 
   create_table "tfgs", :force => true do |t|
     t.string   "tema"
-    t.integer  "num_orden"
     t.date     "fecha_comienzo"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "alumno_id"
+    t.integer  "tribunal_id"
   end
 
   create_table "tribunals", :force => true do |t|
-    t.integer  "num_tribunal"
     t.string   "lugar_examen"
     t.integer  "num_componentes"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "tfg_id"
   end
 
   create_table "users", :force => true do |t|

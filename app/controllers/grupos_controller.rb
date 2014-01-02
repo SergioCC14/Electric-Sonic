@@ -23,6 +23,7 @@ class GruposController < ApplicationController
   def alta
 
     @grupo = Grupo.new
+    @alumnos = Alumno.all
 
     respond_to do |format|
       format.html { render  }

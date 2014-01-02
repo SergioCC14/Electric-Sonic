@@ -32,6 +32,9 @@ input {
 .flash {
   padding: 10px;
   text-align: center;
+  position: absolute;
+  left: 40%;
+  top: 0;
   .error {
     display: inline-block;
     background-color: navy;
@@ -85,7 +88,7 @@ input {
 
 .full_container {
   background-color: #C0C0C0;
-  margin: 20px auto;
+  margin: 44px auto;
   max-width: 800px;
   min-height: 300px;
   padding: 2px;

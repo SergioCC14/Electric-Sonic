@@ -7,3 +7,6 @@
     - elsif flash[:notice]
       .notice
         =flash[:notice]
+
+  :javascript
+    setInterval(function(){$('.flash').slideUp();},5000);

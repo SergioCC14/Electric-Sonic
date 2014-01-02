@@ -4,7 +4,8 @@ class Tribunal < ActiveRecord::Base
 
   has_many :profesors
 
-  has_one :tfg
+	# Un tribunal puede tener varios tfg, un tfg solo tiene un tribunal.
+  has_many :tfg
 
 
 end

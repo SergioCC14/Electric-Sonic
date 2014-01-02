@@ -20,5 +20,6 @@
         ="OK"
 
       = f.submit "", :style => 'display:none' ,:id => 'input_new_session'
-
+      %div{:onkeypress => "return checkSubmit(event)"}
+      
     .clearfix

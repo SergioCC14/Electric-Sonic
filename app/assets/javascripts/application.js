@@ -19,9 +19,8 @@ function deselect() {
   $('.icon').removeClass('selected');
 }
 
-function checkSubmit(e)
-{
-	if(e && e.keyCode == 13) {
-  	document.forms[0].submit();
-  }
+function checkSubmit(inputElement, event) {
+	if(event.keyCode == 13) {
+		inputElement.form.submit();
+	}
 }

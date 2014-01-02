@@ -8,18 +8,17 @@
         %td
           %label Nombre
         %td
-          = text_field_tag :nombre, nil, :class => 'default_field', :placeholder => 'Nombre'
+          = text_field_tag :nombre, nil, :class => 'default_field', :onkeypress => "submitOnEnter(this, event);", :placeholder => 'Nombre'
       %tr
         %td
           %label Contraseña
         %td
-          = password_field_tag :pass, nil, :class => 'default_field', :placeholder => 'Contraseña'
+          = password_field_tag :pass, nil, :class => 'default_field', :onkeypress => "submitOnEnter(this, event);", :placeholder => 'Contraseña'
 
     %div{:style => 'float: right;'}
       = link_to("", :class => 'btn', :onclick => "$('#input_new_session').click()", :remote => true) do
         ="OK"
 
       = f.submit "", :style => 'display:none' ,:id => 'input_new_session'
-      %div{:onkeypress => "return checkSubmit(event)"}
       
     .clearfix

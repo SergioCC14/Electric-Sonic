@@ -9,6 +9,7 @@
       %th="Apellidos"
       %th="TFG"
       %th="Profesor"
+      %th="Grupo"
 
     - for alumno in @alumnos
       %tr
@@ -22,7 +23,9 @@
           %td= f.text_field :tfg, :placeholder => "No Disponible", :value => (!alumno.tfg.blank? ? alumno.tfg.tema : nil), :disabled => true
 
           
-          %td= f.text_field :profesor, :placeholder => "No Disponible", :value => (!alumno.profesor.blank? ? alumno.profesor.nombre : nil), :disabled => true         
+          %td= f.text_field :profesor, :placeholder => "No Disponible", :value => (!alumno.profesor.blank? ? alumno.profesor.nombre : nil), :disabled => true
+
+          %td= f.text_field :grupo, :placeholder => "Ninguno", :value => (!alumno.grupo.blank? ? alumno.grupo.nombre : nil), :disabled => true         
 
           %td
             = link_to("", :class => 'btn', :onclick => "$('#submit_alumno_#{alumno.id}').click()", :remote => true) do

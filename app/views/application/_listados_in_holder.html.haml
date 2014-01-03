@@ -5,12 +5,11 @@
   =link_to('Listado 4', listado_4_path, :remote => true, :class => 'opt_col')
   =link_to('Listado 5', listado_5_path, :remote => true, :class => 'opt_col')
   =link_to('Listado 6', listado_6_path, :remote => true, :class => 'opt_col')
-  =link_to('Listado 7', listado_7_path, :remote => true, :class => 'opt_col')
 
 
 #right_column_for_listados.right_column
-
-  %ul
+  %h2="Resumen de listados"
+  %ol
     %li="Listado de Todos los modelos"
     %li="Listado de Profesores con los TFG que dirige cada uno"
     %li="Alumnos que pertecence a un grupo determinado"
@@ -18,4 +17,7 @@
     %li="Alumnos con su TFG"
     %li="Listado de los tribunales y a que TFG califican"
     %li="Listado de los temas del TFG"
+
+  %p{:style => 'padding-top: 20px;'}
+    %i="Utilice el menu de la izquierda para seleccionar los menús"
     

@@ -68,20 +68,9 @@ class ApplicationController < ActionController::Base
   end
 
   def listado_6
-    respond_to do |format|
-      format.html { render  }
-      format.js { render }
-    end      
-  end
 
-  def listado_7
-    respond_to do |format|
-      format.html { render  }
-      format.js { render }
-    end      
-  end
+    @tribunals = Tribunal.where("tfg_id IS NOT NULL")
 
-  def listado_8
     respond_to do |format|
       format.html { render  }
       format.js { render }

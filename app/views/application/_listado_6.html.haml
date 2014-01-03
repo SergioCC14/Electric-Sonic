@@ -1,0 +1,20 @@
+#right_column_for_listados.right_column
+  %h2="Listado de los tribunales y a que TFG califican"
+  
+  %table.table_fow_window_in_holder
+    %tr
+      %th="Nombre"
+      %th="Lugar"
+      %th="Trabajo Fin de Grado"
+      %th="Alumno"
+      %th="Profesor que tutela"
+    -for tribunal in @tribunals
+      - tfg = Tfg.find(tribunal.tfg_id)
+      - alumno = tfg.alumno
+      - profesor = (!alumno.blank? ? alumno.profesor : nil)
+      %tr
+        %td="Tribunal #{tribunal.id}"
+        %td=tribunal.lugar_examen
+        %td="#{ !tfg.blank? ? tfg.tema : '-'}"
+        %td="#{ !alumno.blank? ? alumno.nombre : '-'}"
+        %td="#{ !profesor.blank? ? profesor.nombre : '-'}"

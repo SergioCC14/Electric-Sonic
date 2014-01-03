@@ -1,0 +1,19 @@
+class profesor
+  has_many :tutelados througth tutorias
+  has_many :alumnos, throug: clases
+  has_many :castigados, throug: clases
+
+
+
+class tutoria
+  belogns_to profesor
+  belongs_to tutelado, class: 'Alumno', foregin_key: alumno_id
+
+
+class castigo
+  belogns_to profesor
+  belongs_to castigado, class: 'Alumno', foregin_key: alumno_id
+
+
+class alumno
+  has_many: tutorias

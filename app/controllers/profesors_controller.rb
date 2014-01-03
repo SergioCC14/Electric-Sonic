@@ -11,7 +11,6 @@ class ProfesorsController < ApplicationController
   end
 
   def modificar
-
     @profesors = Profesor.all
 
     respond_to do |format|

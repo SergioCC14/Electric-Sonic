@@ -32,7 +32,10 @@ class TribunalsController < ApplicationController
     respond_to do |format|
       format.html { render  }
       format.js {  }
-    end        
+    end
+
+    @profesors = Profesor.all
+
   end
 
   # POST /users

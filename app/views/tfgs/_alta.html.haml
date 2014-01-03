@@ -1,20 +1,24 @@
 #right_column.right_column
   %h2= "Formulario para Nuevo Trabajo Fin de Grado"
+  - if @alumno.blank?
+    = form_for(@tfg) do |f|
+      %p
+        = f.label :tema, "Tema"
+        = f.text_field :tema, :placeholder => "Tema"
 
-  = form_for(@tfg) do |f|
+        = f.text_field :fecha_comienzo, :style => 'display:none', :value => Time.now
+
+      %p
+        = f.label :alumno, "Alumno"
+        = f.select :alumno_id, options_for_select(@alumnos.map{|t| [t.nombre, t.id, :title => t.nombre]}), {}, {:class => ''}
+
+      = link_to("", :class => 'btn', :onclick => "$('#submit_alumno').click()", :remote => true) do
+        ="Guardar"
+
+      = f.submit "", :style => 'display:none' ,:id => 'submit_alumno'
+
+    ="Nota: La fecha de comienzo es la fecha actual"
+
+  - else 
     %p
-      = f.label :tema, "Tema"
-      = f.text_field :tema, :placeholder => "Tema"
-
-      = f.text_field :fecha_comienzo, :style => 'display:none', :value => Time.now
-
-    %p
-      = f.label :alumno, "Alumno"
-      = f.select :alumno_id, options_for_select(@alumnos.map{|t| [t.nombre, t.id, :title => t.nombre]}), {}, {:class => ''}
-
-    = link_to("", :class => 'btn', :onclick => "$('#submit_alumno').click()", :remote => true) do
-      ="Guardar"
-
-    = f.submit "", :style => 'display:none' ,:id => 'submit_alumno'
-
-  ="Nota: La fecha de comienzo es la fecha actual"
+      .notice_text=raw("No hay Alumnos disponibles para crear un nuevo Trabajo Fin de Grado. Puede crearlos en el fichero <i>Alumno</i>.")

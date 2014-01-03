@@ -23,8 +23,14 @@ class AlumnosController < ApplicationController
   def alta
 
     @alumno = Alumno.new
-    @profesors = Profesor.all
     @grupos = Grupo.all
+    @profesors = []
+
+    for profesor in Profesor.all
+      (!profesor.alumno.blank?) ?  nil : @profesors << profesor
+    end
+
+    
 
     respond_to do |format|
       format.html { render  }

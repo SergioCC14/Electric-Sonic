@@ -23,7 +23,12 @@ class GruposController < ApplicationController
   def alta
 
     @grupo = Grupo.new
-    @alumnos = Alumno.all
+
+    @alumnos = []
+
+    for alumno in Alumno.all
+      (!alumno.grupos.blank?) ?  nil : @alumnos << alumno
+    end
 
     respond_to do |format|
       format.html { render  }
@@ -33,6 +38,9 @@ class GruposController < ApplicationController
 
   # POST /users
   def create
+
+    # raise params[:grupo].inspect
+
     @grupo = Grupo.new(params[:grupo])
 
     respond_to do |format|

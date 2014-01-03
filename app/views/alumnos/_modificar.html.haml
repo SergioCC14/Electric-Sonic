@@ -25,7 +25,7 @@
           
           %td= f.text_field :profesor, :placeholder => "No Disponible", :value => (!alumno.profesor.blank? ? alumno.profesor.nombre : nil), :disabled => true
 
-          %td= f.text_field :grupo, :placeholder => "Ninguno", :value => (!alumno.grupo.blank? ? alumno.grupo.nombre : nil), :disabled => true         
+          %td= f.text_field :grupo, :placeholder => "Ninguno", :value => (!alumno.grupos.blank? ? alumno.grupos.first.nombre : nil), :disabled => true         
 
           %td
             = link_to("", :class => 'btn', :onclick => "$('#submit_alumno_#{alumno.id}').click()", :remote => true) do

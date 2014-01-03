@@ -26,7 +26,7 @@ class TfgsController < ApplicationController
     @alumnos = []
 
     for alumno in Alumno.all
-      (Tfg.find_by_alumno_id(alumno.id)) ?  nil : @alumnos << alumno
+      (!alumno.tfg.blank?) ?  nil : @alumnos << alumno
     end
 
     respond_to do |format|

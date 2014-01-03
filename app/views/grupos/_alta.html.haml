@@ -6,7 +6,15 @@
       = f.label :nombre, "Nombre"
       = f.text_field :nombre, :placeholder => "Nombre"
 
+    %p
+      - for alumno in @alumnos
+        .checkbox_zone=check_box_tag "grupo[alumno_ids][]", alumno.id, false
+        .name_zone=alumno.nombre
+
     = link_to("", :class => 'btn', :onclick => "$('#submit_grupo').click()", :remote => true) do
       ="Guardar"
 
     = f.submit "", :style => 'display:none' ,:id => 'submit_grupo'
+
+
+/ =check_box_tag "grupo[alumnos_ids][]", alumno.id, grupo.alumnos.include?(alumno)

@@ -1,16 +1,24 @@
 #right_column.right_column
   %h2= "Formulario para Nuevo Tribunal"
+  - if !@tfgs.blank?
+    = form_for(@tribunal) do |f|
+      %p
+        = f.label :lugar_examen, "Lugar del Examen"
+        = f.text_field :lugar_examen, :placeholder => "Lugar del examen"
+      
+      %p
+        = f.label :tfg, "Trabajo Fin de Grado"
+        = f.select :tfg_id, options_for_select(@tfgs.map{|t| [t.tema, t.id, :title => t.tema]}), {}, {:class => ''}
+      %p
+        - for profesor in @profesors
+          .checkbox_zone=check_box_tag "tribunal[profesor_ids][]", profesor.id, false
+          .name_zone=profesor.nombre
 
-  = form_for(@tribunal) do |f|
+      = link_to("", :class => 'btn', :onclick => "$('#submit_tribunal').click()", :remote => true) do
+        ="Guardar"
+
+      = f.submit "", :style => 'display:none' ,:id => 'submit_tribunal'
+
+  - else
     %p
-      = f.label :lugar_examen, "Lugar del Examen"
-      = f.text_field :lugar_examen, :placeholder => "Lugar del examen"
-    
-    %p
-      = f.label :tfg, "Trabajo Fin de Grado"
-      = f.select :tfg_id, options_for_select(@tfgs.map{|t| [t.tema, t.id, :title => t.tema]}), {}, {:class => ''}
-
-    = link_to("", :class => 'btn', :onclick => "$('#submit_tribunal').click()", :remote => true) do
-      ="Guardar"
-
-    = f.submit "", :style => 'display:none' ,:id => 'submit_tribunal'
+      .notice_text=raw("No hay Trabajos Fin de Grado disponibles para formar un nuevo tribunal. Puede crearlos en el fichero <i>Trabajos Fin de Grado</i>.")

@@ -36,6 +36,11 @@ class ApplicationController < ActionController::Base
   end
 
   def listado_3
+    @grupos = []
+    for grupo in Grupo.all
+      (grupo.alumnos.blank?) ?  nil : @grupos << grupo
+    end
+
     respond_to do |format|
       format.html { render  }
       format.js { render }
@@ -43,6 +48,12 @@ class ApplicationController < ActionController::Base
   end
 
   def listado_4
+
+    @tribunals = []
+    for tribunal in Tribunal.all
+      (tribunal.profesors.blank?) ?  nil : @tribunals << tribunal
+    end
+
     respond_to do |format|
       format.html { render  }
       format.js { render }

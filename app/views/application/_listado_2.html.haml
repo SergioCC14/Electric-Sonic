@@ -1,0 +1,17 @@
+#right_column_for_listados.right_column
+  %h2="Listado de Profesores con los TFG que dirige cada uno"
+
+  -@profesors = Profesor.all
+
+  %table.table_fow_window_in_holder
+    %tr
+      %th="Nombre"
+      %th="Alumno tutelado"
+      %th="Trabajo Fin de Grado"
+    -for profesor in @profesors
+      - if !profesor.alumno.blank?
+        %tr
+          %td="#{profesor.nombre} #{profesor.apellidos}"
+          %td="#{profesor.alumno.nombre} #{profesor.alumno.apellidos}"
+          %td="#{profesor.alumno.tfg ? profesor.alumno.tfg.tema : nil}"
+          

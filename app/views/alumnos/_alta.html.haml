@@ -4,13 +4,13 @@
   = form_for(@alumno) do |f|
     %p
       = f.label :dni, "Dni"
-      = f.text_field :dni, :required, :placeholder => "DNI"
+      = f.text_field :dni, :required => true, :placeholder => "DNI"
     %p
       = f.label :nombre, "Nombre"
-      = f.text_field :nombre, :required, :placeholder => "Nombre"
+      = f.text_field :nombre, :required => true, :placeholder => "Nombre"
     %p
       = f.label :apellidos, "Apellidos"
-      = f.text_field :apellidos, :required, :placeholder => "Apellidos"
+      = f.text_field :apellidos, :required => true, :placeholder => "Apellidos"
 
     %p
       = f.label :profesor, "Profesor"

@@ -4,16 +4,16 @@
   = form_for(@profesor) do |f|
     %p
       = f.label :dni, "DNI"
-      = f.text_field :dni, :required, :placeholder => "DNI"
+      = f.text_field :dni, :required => true, :placeholder => "DNI"
     %p
       = f.label :nombre, "Nombre"
-      = f.text_field :nombre, :required, :placeholder => "Nombre"
+      = f.text_field :nombre, :required => true, :placeholder => "Nombre"
     %p
       = f.label :apellidos, "Apellidos"
-      = f.text_field :apellidos, :required, :placeholder => "Apellidos"
+      = f.text_field :apellidos, :required => true, :placeholder => "Apellidos"
     %p
       = f.label :domicilio, "Domicilio"
-      = f.text_field :domicilio, :required, :placeholder => "Domicilio"
+      = f.text_field :domicilio, :required => true, :placeholder => "Domicilio"
 
     = link_to("", :class => 'btn', :onclick => "$('#submit_profesor').click()", :remote => true) do
       ="Guardar"

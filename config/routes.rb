@@ -45,12 +45,12 @@ ElectricSonic::Application.routes.draw do
 
 
   match '/listado_1', :to => 'application#listado_1', :as => 'listado_1'
-  match '/listado_2', :to => 'application#listado_1', :as => 'listado_2'
-  match '/listado_3', :to => 'application#listado_1', :as => 'listado_3'
-  match '/listado_4', :to => 'application#listado_1', :as => 'listado_4'
-  match '/listado_5', :to => 'application#listado_1', :as => 'listado_5'
-  match '/listado_6', :to => 'application#listado_1', :as => 'listado_6'
-  match '/listado_7', :to => 'application#listado_1', :as => 'listado_7'
+  match '/listado_2', :to => 'application#listado_2', :as => 'listado_2'
+  match '/listado_3', :to => 'application#listado_3', :as => 'listado_3'
+  match '/listado_4', :to => 'application#listado_4', :as => 'listado_4'
+  match '/listado_5', :to => 'application#listado_5', :as => 'listado_5'
+  match '/listado_6', :to => 'application#listado_6', :as => 'listado_6'
+  match '/listado_7', :to => 'application#listado_7', :as => 'listado_7'
 
   match '/listados_in_holder', :to => 'application#listados_in_holder', :as => 'listados_in_holder'
   match '/ayuda', :to => 'application#ayuda', :as => 'ayuda'

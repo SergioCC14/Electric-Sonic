@@ -1,0 +1,9 @@
+#right_column_for_listados.right_column
+  %h2="Listado de los tribunales y los profesores que estan dentro"
+
+  - for tribunal in @tribunals
+    %div{:style => 'display:inline-block; vertical-align:top;'}
+      %h3.title_for_listados="Tribunal #{tribunal.id}"
+      %ul.list_for_listados
+        - for profesor in tribunal.profesors
+          %li="#{profesor.nombre} #{profesor.apellidos}"

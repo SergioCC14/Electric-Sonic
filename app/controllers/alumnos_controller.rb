@@ -29,7 +29,6 @@ class AlumnosController < ApplicationController
     for profesor in Profesor.all
       (!profesor.alumno.blank?) ?  nil : @profesors << profesor
     end
-
     
 
     respond_to do |format|

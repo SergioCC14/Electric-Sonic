@@ -1,0 +1,9 @@
+#right_column_for_listados.right_column
+  %h2="Listado de grupos con alumnos pertenecientes"
+
+  - for grupo in @grupos
+    %div{:style => 'display:inline-block; vertical-align:top;'}
+      %h3.title_for_listados=grupo.nombre
+      %ul.list_for_listados
+        - for alumno in grupo.alumnos
+          %li="#{alumno.nombre} #{alumno.apellidos}"

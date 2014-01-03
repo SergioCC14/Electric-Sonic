@@ -1,0 +1,82 @@
+#right_column_for_listados.right_column
+  %h2="Listado de Todos los Modelos"
+
+  %h3.title_for_listados="Alumnos"
+  %table.table_fow_window_in_holder
+    %tr
+      %th="Matricula"
+      %th="DNI"
+      %th="Nombre"
+      %th="Apellidos"
+      %th="Fecha de Creacion"
+    -for alumno in Alumno.all
+      %tr
+        %td=alumno.id
+        %td=alumno.dni
+        %td=alumno.nombre
+        %td=alumno.apellidos
+        %td=alumno.created_at
+
+  %h3.title_for_listados="Profesores"
+  %table.table_fow_window_in_holder
+    %tr
+      %th="ID"
+      %th="DNI"
+      %th="Nombre"
+      %th="Apellidos"
+      %th="Domicilio"
+      %th="Fecha de Creacion"
+    -for profesor in Profesor.all
+      %tr
+        %td=profesor.id
+        %td=profesor.dni
+        %td=profesor.nombre
+        %td=profesor.apellidos
+        %td=profesor.domicilio
+        %td=profesor.created_at
+
+  %h3.title_for_listados="Trabajo de Fin De Grado"
+  %table.table_fow_window_in_holder
+    %tr
+      %th="Nª Orden"
+      %th="Tema"
+      %th="Fecha Comienzo"
+    -for tfg in Tfg.all
+      %tr
+        %td=tfg.id
+        %td=tfg.tema
+        %td=tfg.fecha_comienzo
+
+  %h3.title_for_listados="Tribunales"
+  %table.table_fow_window_in_holder
+    %tr
+      %th="Nº Tribunal"
+      %th="Lugar del Examen"
+      %th="Nº Componentes"
+      %th="Fecha de Creacion"
+    -for tribuna in Tribunal.all
+      %tr
+        %td=tribuna.id
+        %td=tribuna.lugar_examen
+        %td=tribuna.num_componentes
+        %td=tribuna.created_at
+
+  %h3.title_for_listados="Grupos de Investigación"
+  %table.table_fow_window_in_holder
+    %tr
+      %th="Nº Grupo"
+      %th="Nombre"
+      %th="Nº Componentes"
+      %th="Fecha de Creacion"
+    -for grupo in Grupo.all
+      %tr
+        %td=grupo.id
+        %td=grupo.nombre
+        %td=grupo.num_componentes
+        %td=grupo.created_at
+
+
+
+
+
+

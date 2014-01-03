@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def listados_in_holder
     respond_to do |format|
-      format.html { render  }
+      format.html { render }
       format.js { render }
     end   
   end

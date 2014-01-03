@@ -220,6 +220,10 @@ input {
       overflow-x: auto;
       overflow-y: auto;
 
+      h3.title_for_listados {
+        text-align: center;
+      }
+
       .notice_text {
         width: 490px;
       }
@@ -241,6 +245,7 @@ input {
 }  
 
 table.table_fow_window_in_holder {
+  text-align: center;
   input {width:83px;}
 
 }

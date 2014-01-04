@@ -9,7 +9,7 @@
       %th="Alumno"
       %th="Profesor que tutela"
     -for tribunal in @tribunals
-      - tfg = Tfg.find(tribunal.tfg_id)
+      - tfg = Tfg.find_by_id(tribunal.tfg_id)
       - alumno = tfg.alumno
       - profesor = (!alumno.blank? ? alumno.profesor : nil)
       %tr

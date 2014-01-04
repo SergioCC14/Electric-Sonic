@@ -4,4 +4,6 @@ class Tfg < ActiveRecord::Base
 
   belongs_to :alumno
 
+  has_one :tribunal
+
 end

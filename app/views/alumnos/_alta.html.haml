@@ -1,27 +1,31 @@
 #right_column.right_column
   %h2= "Formulario para Nuevos Alumnos"
 
-  = form_for(@alumno) do |f|
-    %p
-      = f.label :dni, "Dni"
-      = f.text_field :dni, :required => true, :placeholder => "DNI"
-    %p
-      = f.label :nombre, "Nombre"
-      = f.text_field :nombre, :required => true, :placeholder => "Nombre"
-    %p
-      = f.label :apellidos, "Apellidos"
-      = f.text_field :apellidos, :required => true, :placeholder => "Apellidos"
+  - if !@profesors.blank?
+    = form_for(@alumno) do |f|
+      %p
+        = f.label :dni, "Dni"
+        = f.text_field :dni, :required => true, :placeholder => "DNI"
+      %p
+        = f.label :nombre, "Nombre"
+        = f.text_field :nombre, :required => true, :placeholder => "Nombre"
+      %p
+        = f.label :apellidos, "Apellidos"
+        = f.text_field :apellidos, :required => true, :placeholder => "Apellidos"
 
+      %p
+        = f.label :profesor, "Profesor"
+        = f.select :profesor_id, options_for_select(@profesors.map{|t| [t.nombre, t.id, :title => t.nombre]}), {}, {:class => ''}
+
+      / VALORAR SI ELIMINAR (PROBAR)
+      %p
+        = f.label :grupo, "Grupo"
+        = f.select :grupo_id, options_for_select(@grupos.map{|t| [t.nombre, t.id, :title => t.nombre]}), {include_blank: 'Ninguno'}, {:class => ''}
+
+      = link_to("", :class => 'btn', :onclick => "$('#submit_alumno').click()", :remote => true) do
+        ="Guardar"
+
+      = f.submit "", :style => 'display:none' ,:id => 'submit_alumno'
+  - else
     %p
-      = f.label :profesor, "Profesor"
-      = f.select :profesor_id, options_for_select(@profesors.map{|t| [t.nombre, t.id, :title => t.nombre]}), {include_blank: 'Ninguno'}, {:class => ''}
-
-
-    %p
-      = f.label :grupo, "Grupo"
-      = f.select :grupo_id, options_for_select(@grupos.map{|t| [t.nombre, t.id, :title => t.nombre]}), {include_blank: 'Ninguno'}, {:class => ''}
-
-    = link_to("", :class => 'btn', :onclick => "$('#submit_alumno').click()", :remote => true) do
-      ="Guardar"
-
-    = f.submit "", :style => 'display:none' ,:id => 'submit_alumno'
+      .notice_text=raw("No hay Profesores disponibles para tutorizar a este alumno. Puede crearlos en el fichero <i>Profesores</i>.")

@@ -69,7 +69,7 @@ class TfgsController < ApplicationController
 
     respond_to do |format|
       if @tfg.update_attributes(params[:tfg])
-        format.html { redirect_to root_path, notice: 'TFG actualizado.' }
+        format.html { redirect_to root_path, notice: 'TFG actualizado' }
         format.js { redirect_to root_path }
       else
         format.html { render action: "edit" }

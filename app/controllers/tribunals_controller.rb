@@ -72,7 +72,7 @@ class TribunalsController < ApplicationController
 
     respond_to do |format|
       if @tribunal.update_attributes(params[:tribunal])
-        format.html { redirect_to root_path, notice: 'Tribunal actualizado.' }
+        format.html { redirect_to root_path, notice: 'Tribunal actualizado' }
         format.js { redirect_to root_path }
       else
         format.html { render action: "edit" }

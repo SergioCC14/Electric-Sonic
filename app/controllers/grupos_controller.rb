@@ -73,7 +73,7 @@ class GruposController < ApplicationController
 
     respond_to do |format|
       if @grupo.update_attributes(params[:grupo])
-        format.html { redirect_to root_path, notice: 'Grupo actualizado.' }
+        format.html { redirect_to root_path, notice: 'Grupo actualizado' }
         format.js { redirect_to root_path }
       else
         format.html { render action: "edit" }

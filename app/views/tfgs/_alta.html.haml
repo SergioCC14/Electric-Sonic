@@ -10,7 +10,7 @@
 
       %p
         = f.label :alumno, "Alumno"
-        = f.select :alumno_id, options_for_select(@alumnos.map{|t| [t.nombre, t.id, :title => t.nombre]}), {}, {:class => ''}
+        = f.select :alumno_id, options_for_select(@alumnos.map{|t| [t.nombre, t.id, :title => t.nombre]}), {include_blank: 'Ninguno'}, {:class => ''}
 
       = link_to("", :class => 'btn', :onclick => "$('#submit_alumno').click()", :remote => true) do
         ="Guardar"

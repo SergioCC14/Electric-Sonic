@@ -72,7 +72,7 @@ class AlumnosController < ApplicationController
 
     respond_to do |format|
       if @alumno.update_attributes(params[:alumno])
-        format.html { redirect_to root_path, notice: 'Alumno actualizado.' }
+        format.html { redirect_to root_path, notice: 'Alumno actualizado' }
         format.js { redirect_to root_path }
       else
         format.html { render action: "edit" }

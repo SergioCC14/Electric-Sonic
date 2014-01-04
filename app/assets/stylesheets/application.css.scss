@@ -250,6 +250,12 @@ input {
         display: inline-block;
       }
     }
+
+    .right_column.for_alta {
+      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
   }
 }
 

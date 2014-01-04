@@ -222,9 +222,6 @@ input {
       min-width: 545px;
       max-width: 680px;
       max-height: 280px;
-      overflow: hidden;
-      overflow-x: auto;
-      overflow-y: auto;
 
       h3.title_for_listados {
         text-align: center;
@@ -251,7 +248,7 @@ input {
       }
     }
 
-    .right_column.for_alta {
+    .right_column.overflow:  {
       overflow: hidden;
       overflow-x: hidden;
       overflow-y: hidden;

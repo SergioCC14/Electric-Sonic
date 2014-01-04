@@ -250,8 +250,8 @@ input {
 
     .right_column.overflow  {
       overflow: hidden;
-      overflow-x: hidden;
-      overflow-y: hidden;
+      overflow-x: auto;
+      overflow-y: auto;
     }
   }
 }

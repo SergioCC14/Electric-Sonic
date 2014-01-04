@@ -4,9 +4,8 @@ class Grupo < ActiveRecord::Base
 
   has_and_belongs_to_many :alumnos
 
-  # Calcula componentes se lanza antes de guardarse
+  # Calcula componentes se lanza antes de actualizarse
   before_update :calcula_componentes
-  before_create :calcula_componentes
 
   def calcula_componentes
     self.num_componentes = self.alumnos.count

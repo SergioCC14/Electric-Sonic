@@ -44,6 +44,9 @@ class TribunalsController < ApplicationController
 
     respond_to do |format|
       if (@tribunal.save)
+
+        @tribunal.update_attributes(:num_componentes => @tribunal.profesors.count)
+
         format.html { redirect_to root_path, notice: 'Tribunal dado de alta correctamente' }
         format.json { render json: @tribunal, status: :created, location: @tribunal }
       else

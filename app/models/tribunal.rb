@@ -5,15 +5,13 @@ class Tribunal < ActiveRecord::Base
   has_and_belongs_to_many :profesors
 
 	# Un tribunal puede tener varios tfg, un tfg solo tiene un tribunal.
-  has_one :tfg
+  has_one :tfg, :dependent => :destroy
 
-  # Calcula componentes se lanza antes de guardarse
+  # Calcula componentes se lanza antes de actualizarse
   before_update :calcula_componentes
-  before_create :calcula_componentes
 
   def calcula_componentes
     self.num_componentes = self.profesors.count
   end
-
 
 end

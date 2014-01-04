@@ -163,6 +163,9 @@ input {
       cursor: pointer;
     }
   }
+  .bar:hover {
+    cursor: move;
+  }
   .bar.second_bar {
     background-color: #BFC4C8;
     text-align: left;
@@ -177,6 +180,9 @@ input {
     a:hover {
       background-color: #8E9397;
     }
+  }
+  .bar.second_bar:hover {
+    cursor: default;
   }
 }
 

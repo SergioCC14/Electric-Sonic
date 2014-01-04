@@ -38,12 +38,13 @@ class GruposController < ApplicationController
 
   # POST /users
   def create
-
-    # raise params[:grupo].inspect
-
     @grupo = Grupo.new(params[:grupo])
 
+
     respond_to do |format|
+
+      @grupo.update_attributes(:num_componentes => @grupo.alumnos.count)
+
       if (@grupo.save)
         format.html { redirect_to root_path, notice: 'Grupo dado de alta correctamente' }
         format.json { render json: @grupo, status: :created, location: @grupo }

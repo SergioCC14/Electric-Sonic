@@ -1,33 +1,34 @@
 #right_column_for_alumnos.right_column
   %h2= "Modificacion de Profesor"
 
-  .table_fow_window_in_holder
-    %tr
-      %th="ID"
-      %th="DNI"
-      %th="Nombre"
-      %th="Apellidos"
-      %th="Domicilio"
-      %th="Alumno"
-
+  .box_for_modificar
     - if !@profesors.blank?
       - for profesor in @profesors
         = form_for(profesor) do |f|
-          .div
+          .box_fila
+            .space_label= f.label :id, "ID"
+            = f.text_field :id, :placeholder => "ID", :disabled => true, :style => 'width: 25px;'
+          .box_fila
+            .space_label= f.label :dni, "DNI"
+            = f.text_field :dni, :placeholder => "DNI"
+          .box_fila
+            .space_label= f.label :nombre, "Nombre"
+            = f.text_field :nombre, :placeholder => "Nombre"
+          .box_fila
+            .space_label= f.label :apellidos, "Apellidos"
+            = f.text_field :apellidos, :placeholder => "Apellidos"
+          .box_fila
+            .space_label= f.label :domicilio, "Domicilio"
+            = f.text_field :domicilio, :placeholder => "Domicilio"
 
-        
-            %div= f.text_field :id, :placeholder => "ID", :disabled => true, :style => 'width: 25px;'
-            %div= f.text_field :dni, :placeholder => "DNI"
-            %div= f.text_field :nombre, :placeholder => "Nombre"
-            %div= f.text_field :apellidos, :placeholder => "Apellidos"
-            %div= f.text_field :domicilio, :placeholder => "Domicilio"
+          .box_fila
+            .space_label= f.label :alumno, "Alumno"
+            = f.text_field :alumno, :placeholder => "No Disponible", :value => (!profesor.alumno.blank? ? profesor.alumno.nombre : nil), :disabled => true   
 
-            %div= f.text_field :alumno, :placeholder => "No Disponible", :value => (!profesor.alumno.blank? ? profesor.alumno.nombre : nil), :disabled => true   
-
-            %div
-              = link_to("", :class => 'btn', :onclick => "$('#submit_profesor_#{profesor.id}').click()", :remote => true) do
-                ="Guardar"
-              = f.submit "", :style => 'display:block' ,:id => "submit_profesor_#{profesor.id}"
-            %div
-              = link_to(profesor_path(profesor), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?") do
-                ="Eliminar"
+          .actions
+            = link_to("", :class => 'btn', :onclick => "$('#submit_profesor_#{profesor.id}').click()", :remote => true) do
+              ="Guardar"
+            = f.submit "", :style => 'display:none' ,:id => "submit_profesor_#{profesor.id}"
+          
+            = link_to(profesor_path(profesor), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?", :style => 'float:right') do
+              ="Eliminar"

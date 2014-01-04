@@ -1,24 +1,27 @@
 #right_column_for_alumnos.right_column
   %h2= "Modificacion de Grupos de Investigacion"
 
-  %table.table_fow_window_in_holder
-    %tr
-      %th="Nº Grupo"
-      %th="Nombre"
-      %th="Nº Componentes"
-
+  .box_for_modificar
     - if !@grupos.blank?
       - for grupo in @grupos
-        %tr
-          = form_for(grupo) do |f|
-        
-            %td= f.text_field :id, :placeholder => "Nº Grupo", :disabled => true
-            %td= f.text_field :nombre, :placeholder => "Nombre", :style => 'width: 120px'
-            %td= f.text_field :num_componentes, :placeholder => "Nº Componentes", :disabled => true, :style => 'width: 120px'
-            %td
-              = link_to("", :class => 'btn', :onclick => "$('#submit_grupo_#{grupo.id}').click()", :remote => true) do
-                ="Guardar"
-              = f.submit "", :style => 'display:block' ,:id => "submit_grupo_#{grupo.id}"
-            %td
-              = link_to(grupo_path(grupo), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?") do
-                ="Eliminar"
+        = form_for(grupo) do |f|
+      
+          .box_fila
+            .space_label= f.label :id, "Nº Grupo"
+            = f.text_field :id, :placeholder => "Nº Grupo", :disabled => true
+
+          .box_fila
+            .space_label= f.label :nombre, "Nombre"
+            = f.text_field :nombre, :placeholder => "Nombre", :style => 'width: 120px'
+
+          .box_fila
+            .space_label= f.label :num_componetes, "Componentes"
+            = f.text_field :num_componentes, :placeholder => "Nº Componentes", :disabled => true, :style => 'width: 120px'
+
+          .actions
+            = link_to("", :class => 'btn', :onclick => "$('#submit_grupo_#{grupo.id}').click()", :remote => true) do
+              ="Guardar"
+            = f.submit "", :style => 'display:none' ,:id => "submit_grupo_#{grupo.id}"
+          
+            = link_to(grupo_path(grupo), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?", :style => 'float:right') do
+              ="Eliminar"

@@ -256,6 +256,34 @@ input {
 table.table_fow_window_in_holder {
   text-align: center;
   input {width:83px;}
-
 }
 
+
+.box_for_modificar {
+  display: block;
+  form {
+    border: 1px solid #BFC4C8;
+    display: inline-block;
+    max-width: 250px;
+    padding: 5px;
+  }
+  .box_fila {
+    display: block;
+    max-width: 310px;
+    .space_label {
+      label {
+        font-weight: bold;
+      }
+      width: 110px;
+      display: inline-block;
+    }
+    
+    input {
+      width: 90px;
+    }
+  }
+  .actions {
+    display: block;
+    padding: 10px 0px 5px 0px;
+  }
+}

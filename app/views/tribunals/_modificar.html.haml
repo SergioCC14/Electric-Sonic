@@ -1,23 +1,23 @@
 #right_column_for_alumnos.right_column
   %h2= "Modificacion de Tribunales"
 
-  %table.table_fow_window_in_holder
-    %tr
-      %th="Nº Tribunal"
-      %th="Lugar del Examen"
-      %th="Nº Componentes"
-
+  .box_for_modificar
     - for tribunal in @tribunals
-      %tr
-        = form_for(tribunal) do |f|
-      
-          %td= f.text_field :id, :placeholder => "Nº Tribunal", :disabled => true
-          %td= f.text_field :lugar_examen, :placeholder => "Lugar del Examen", :style => 'width: 120px'
-          %td= f.text_field :num_componentes, :placeholder => "Nº Componentes", :disabled => true, :style => 'width: 120px'
-          %td
-            = link_to("", :class => 'btn', :onclick => "$('#submit_alumno_#{tribunal.id}').click()", :remote => true) do
-              ="Guardar"
-            = f.submit "", :style => 'display:block' ,:id => "submit_alumno_#{tribunal.id}"
-          %td
-            = link_to(tribunal_path(tribunal), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?") do
-              ="Eliminar"
+      = form_for(tribunal) do |f|
+        .box_fila
+          .space_label= f.label :id, "Nº Tribunal"
+          = f.text_field :id, :placeholder => "Nº Tribunal", :disabled => true
+        .box_fila
+          .space_label= f.label :lugar_examen, "Lugar"
+          = f.text_field :lugar_examen, :placeholder => "Lugar del Examen"
+        .box_fila
+          .space_label= f.label :num_componentes, "Componentes"
+          = f.text_field :num_componentes, :placeholder => "Nº Componentes", :disabled => true
+        
+        .actions
+          = link_to("", :class => 'btn', :onclick => "$('#submit_alumno_#{tribunal.id}').click()", :remote => true) do
+            ="Guardar"
+          = f.submit "", :style => 'display:none' ,:id => "submit_alumno_#{tribunal.id}"
+        
+          = link_to(tribunal_path(tribunal), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?", :style => 'float:right') do
+            ="Eliminar"

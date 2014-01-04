@@ -1,36 +1,38 @@
 #right_column_for_alumnos.right_column
   %h2= "Modificacion de Alumno"
 
-  %table.table_fow_window_in_holder
-    %tr
-      %th="Matricula"
-      %th="DNI"
-      %th="Nombre"
-      %th="Apellidos"
-      %th="TFG"
-      %th="Profesor"
-      %th="Grupo"
-
+  .box_for_modificar
     - for alumno in @alumnos
-      %tr
-        = form_for(alumno) do |f|
-      
-          %td= f.text_field :id, :placeholder => "Nº Matricula", :disabled => true
-          %td= f.text_field :dni, :placeholder => "DNI"
-          %td= f.text_field :nombre, :placeholder => "Nombre"
-          %td= f.text_field :apellidos, :placeholder => "Apellidos"
+      = form_for(alumno) do |f|
+        .box_fila
+          .space_label= f.label :id, "Nº Matricula"
+          = f.text_field :id, :placeholder => "Nº Matricula", :disabled => true
+        .box_fila
+          .space_label= f.label :dni, "DNI"
+          = f.text_field :dni, :placeholder => "DNI"
+        .box_fila
+          .space_label= f.label :nombre, "Nombre"
+          = f.text_field :nombre, :placeholder => "Nombre"
+        .box_fila
+          .space_label= f.label :apellidos, "Apellidos"
+          = f.text_field :apellidos, :placeholder => "Apellidos"
 
-          %td= f.text_field :tfg, :placeholder => "No Disponible", :value => (!alumno.tfg.blank? ? alumno.tfg.tema : nil), :disabled => true
+        .box_fila
+          .space_label= f.label :tfg, "TFG"
+          = f.text_field :tfg, :placeholder => "No Disponible", :value => (!alumno.tfg.blank? ? alumno.tfg.tema : nil), :disabled => true
+        
+        .box_fila
+          .space_label= f.label :profesor, "Profesor"
+          = f.text_field :profesor, :placeholder => "No Disponible", :value => (!alumno.profesor.blank? ? alumno.profesor.nombre : nil), :disabled => true
 
-          
-          %td= f.text_field :profesor, :placeholder => "No Disponible", :value => (!alumno.profesor.blank? ? alumno.profesor.nombre : nil), :disabled => true
+        .box_fila
+          .space_label= f.label :grupo, "Grupo"
+          = f.text_field :grupo, :placeholder => "Ninguno", :value => (!alumno.grupos.blank? ? alumno.grupos.first.nombre : nil), :disabled => true         
 
-          %td= f.text_field :grupo, :placeholder => "Ninguno", :value => (!alumno.grupos.blank? ? alumno.grupos.first.nombre : nil), :disabled => true         
-
-          %td
-            = link_to("", :class => 'btn', :onclick => "$('#submit_alumno_#{alumno.id}').click()", :remote => true) do
-              ="Guardar"
-            = f.submit "", :style => 'display:block' ,:id => "submit_alumno_#{alumno.id}"
-          %td
-            = link_to(alumno_path(alumno), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?") do
-              ="Eliminar"
+        .actions
+          = link_to("", :class => 'btn', :onclick => "$('#submit_alumno_#{alumno.id}').click()", :remote => true) do
+            ="Guardar"
+          = f.submit "", :style => 'display:none' ,:id => "submit_alumno_#{alumno.id}"
+        
+          = link_to(alumno_path(alumno), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?", :style => 'float:right') do
+            ="Eliminar"

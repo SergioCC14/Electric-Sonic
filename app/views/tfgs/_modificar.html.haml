@@ -1,28 +1,28 @@
 #right_column_for_alumnos.right_column
   %h2= "Modificacion de Trabajos de Fin de Grado"
-
-  %table.table_fow_window_in_holder
-    %tr
-      %th="Nª Orden"
-      %th="Tema"
-      %th="Fecha Comienzo"
-      %th="Alumno"
-    
+  
+  .box_for_modificar    
     - if !@tfgs.blank?
       - for tfg in @tfgs
-        %tr
-          = form_for(tfg) do |f|
-        
-            %td= f.text_field :id, :placeholder => "Nª Orden", :disabled => true
-            %td= f.text_field :tema, :placeholder => "DNI"
-            %td= f.text_field :fecha_comienzo, :placeholder => "Fecha Comienzo"
-            
-            %td= f.text_field :alumno, :placeholder => "No Disponible", :value => (!tfg.alumno.blank? ? tfg.alumno.nombre : nil), :disabled => true 
+        = form_for(tfg) do |f|
+          .box_fila
+            .space_label= f.label :id, "Nª Orden"
+            = f.text_field :id, :placeholder => "Nª Orden", :disabled => true
+          .box_fila
+            .space_label= f.label :id, "Tema"
+            = f.text_field :tema, :placeholder => "Tema"
+          .box_fila
+            .space_label= f.label :fecha_comienzo, "F. Comienzo"
+            = f.text_field :fecha_comienzo, :placeholder => "Fecha Comienzo"
+          
+          .box_fila
+            .space_label= f.label :alumno, "Alumno"
+            = f.text_field :alumno, :placeholder => "No Disponible", :value => (!tfg.alumno.blank? ? tfg.alumno.nombre : nil), :disabled => true 
 
-            %td
-              = link_to("", :class => 'btn', :onclick => "$('#submit_tfg_#{tfg.id}').click()", :remote => true) do
-                ="Guardar"
-              = f.submit "", :style => 'display:block' ,:id => "submit_tfg_#{tfg.id}"
-            %td
-              = link_to(tfg_path(tfg), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?") do
-                ="Eliminar"
+          .actions
+            = link_to("", :class => 'btn', :onclick => "$('#submit_tfg_#{tfg.id}').click()", :remote => true) do
+              ="Guardar"
+            = f.submit "", :style => 'display:none' ,:id => "submit_tfg_#{tfg.id}"
+          
+            = link_to(tfg_path(tfg), :method => :delete, :class => 'btn', :confirm => "¿Desea eliminar el objeto?", :style => 'float:right') do
+              ="Eliminar"

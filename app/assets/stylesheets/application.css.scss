@@ -157,7 +157,7 @@ input {
       right: 0px;
       display: inline-block;
       background-color: #8A8A8A;
-      padding: 4px 6px 1px;     
+      padding: 2px 6px 3px;     
     }
     .x_for_window:hover {
       cursor: pointer;
@@ -219,9 +219,9 @@ input {
     .right_column {
       display: inline-block;
       padding-left: 5px;
-      min-width: 565px;
+      min-width: 585px;
       max-width: 680px;
-      max-height: 270px;
+      max-height: 280px;
       overflow: hidden;
       overflow-x: auto;
       overflow-y: auto;

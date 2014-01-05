@@ -22,3 +22,11 @@
       = f.submit "", :style => 'display:none' ,:id => 'input_new_session'
       
     .clearfix
+
+.help_login
+  .text_help{:id => 'help_p'}="Ayuda"
+
+  :javascript
+    $('#help_p').click(function() {
+      alert("Nombre: 'roberto'\nContraseña: 'roberto'")
+      })

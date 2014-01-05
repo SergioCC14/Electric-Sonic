@@ -1,6 +1,7 @@
 #right_column.right_column
   %h2= "Formulario para Nuevo Trabajo Fin de Grado"
-  - if @alumno.blank?
+
+  - if !@alumnos.blank?
     = form_for(@tfg) do |f|
       %p
         = f.label :tema, "Tema"

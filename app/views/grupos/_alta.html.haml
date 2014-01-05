@@ -11,10 +11,19 @@
         .checkbox_zone=check_box_tag "grupo[alumno_ids][]", alumno.id, false
         .name_zone=alumno.nombre
 
-    = link_to("", :class => 'btn', :onclick => "$('#submit_grupo').click()", :remote => true) do
+    = link_to("", :class => 'btn', :id => "link_to_submit_grupo", :remote => true) do
       ="Guardar"
 
     = f.submit "", :style => 'display:none' ,:id => 'submit_grupo'
 
 
-/ =check_box_tag "grupo[alumnos_ids][]", alumno.id, grupo.alumnos.include?(alumno)
+  :javascript
+    // Comprueba si hay algún alumno seleccionado
+    // Si es así, manda el formulario
+    $('#link_to_submit_grupo').click( function() {
+      $(':checkbox').each(function(){
+          if ($(this).is(':checked')) {
+            $('#submit_grupo').click()
+          }
+      });
+    })

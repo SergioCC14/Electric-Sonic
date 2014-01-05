@@ -2,78 +2,93 @@
   %h2="Listado de Todos los Modelos"
 
   %h3.title_for_listados="Alumnos"
-  %table.table_fow_window_in_holder
-    %tr
-      %th="Matricula"
-      %th="DNI"
-      %th="Nombre"
-      %th="Apellidos"
-      %th="Fecha de Creacion"
-    -for alumno in Alumno.all
+  - if !Alumno.all.blank?
+    %table.table_fow_window_in_holder
       %tr
-        %td=alumno.id
-        %td=alumno.dni
-        %td=alumno.nombre
-        %td=alumno.apellidos
-        %td=alumno.created_at
+        %th="Matricula"
+        %th="DNI"
+        %th="Nombre"
+        %th="Apellidos"
+        %th="Fecha de Creacion"
+      -for alumno in Alumno.all
+        %tr
+          %td=alumno.id
+          %td=alumno.dni
+          %td=alumno.nombre
+          %td=alumno.apellidos
+          %td=alumno.created_at
+  - else
+    %div{:style => 'text-align: center; font-style: italic'}="No hay Alumnos disponibles"
 
   %h3.title_for_listados="Profesores"
-  %table.table_fow_window_in_holder
-    %tr
-      %th="ID"
-      %th="DNI"
-      %th="Nombre"
-      %th="Apellidos"
-      %th="Domicilio"
-      %th="Fecha de Creacion"
-    -for profesor in Profesor.all
+  - if !Profesor.all.blank?
+    %table.table_fow_window_in_holder
       %tr
-        %td=profesor.id
-        %td=profesor.dni
-        %td=profesor.nombre
-        %td=profesor.apellidos
-        %td=profesor.domicilio
-        %td=profesor.created_at
+        %th="ID"
+        %th="DNI"
+        %th="Nombre"
+        %th="Apellidos"
+        %th="Domicilio"
+        %th="Fecha de Creacion"
+      -for profesor in Profesor.all
+        %tr
+          %td=profesor.id
+          %td=profesor.dni
+          %td=profesor.nombre
+          %td=profesor.apellidos
+          %td=profesor.domicilio
+          %td=profesor.created_at
+  - else
+    %div{:style => 'text-align: center; font-style: italic'}="No hay Profesores disponibles"
 
   %h3.title_for_listados="Trabajo de Fin De Grado"
-  %table.table_fow_window_in_holder
-    %tr
-      %th="Nª Orden"
-      %th="Tema"
-      %th="Fecha Comienzo"
-    -for tfg in Tfg.all
+  - if !Tfg.all.blank?
+    %table.table_fow_window_in_holder
       %tr
-        %td=tfg.id
-        %td=tfg.tema
-        %td=tfg.fecha_comienzo
+        %th="Nª Orden"
+        %th="Tema"
+        %th="Fecha Comienzo"
+      -for tfg in Tfg.all
+        %tr
+          %td=tfg.id
+          %td=tfg.tema
+          %td=tfg.fecha_comienzo
+  - else
+    %div{:style => 'text-align: center; font-style: italic'}="No hay Trabajos Fin de Grado disponibles"
 
   %h3.title_for_listados="Tribunales"
-  %table.table_fow_window_in_holder
-    %tr
-      %th="Nº Tribunal"
-      %th="Lugar del Examen"
-      %th="Nº Componentes"
-      %th="Fecha de Creacion"
-    -for tribuna in Tribunal.all
+  - if !Tribunal.all.blank?
+    %table.table_fow_window_in_holder
       %tr
-        %td=tribuna.id
-        %td=tribuna.lugar_examen
-        %td=tribuna.num_componentes
-        %td=tribuna.created_at
+        %th="Nº Tribunal"
+        %th="Lugar del Examen"
+        %th="Nº Componentes"
+        %th="Fecha de Creacion"
+      -for tribuna in Tribunal.all
+        %tr
+          %td=tribuna.id
+          %td=tribuna.lugar_examen
+          %td=tribuna.num_componentes
+          %td=tribuna.created_at
+  - else
+    %div{:style => 'text-align: center; font-style: italic'}="No hay Tribunales disponibles"
 
   %h3.title_for_listados="Grupos de Investigación"
-  %table.table_fow_window_in_holder
-    %tr
-      %th="Nº Grupo"
-      %th="Nombre"
-      %th="Nº Componentes"
-      %th="Fecha de Creacion"
-    -for grupo in Grupo.all
+  - if !Grupo.all.blank?
+    %table.table_fow_window_in_holder
       %tr
-        %td=grupo.id
-        %td=grupo.nombre
-        %td=grupo.num_componentes
-        %td=grupo.created_at
+        %th="Nº Grupo"
+        %th="Nombre"
+        %th="Nº Componentes"
+        %th="Fecha de Creacion"
+      -for grupo in Grupo.all
+        %tr
+          %td=grupo.id
+          %td=grupo.nombre
+          %td=grupo.num_componentes
+          %td=grupo.created_at
+  - else
+    %div{:style => 'text-align: center; font-style: italic'}="No hay Grupos disponibles"
 
 
 

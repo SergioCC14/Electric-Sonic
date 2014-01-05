@@ -17,11 +17,6 @@
         = f.label :profesor, "Profesor"
         = f.select :profesor_id, options_for_select(@profesors.map{|t| [t.nombre, t.id, :title => t.nombre]}), {}, {:class => ''}
 
-      / VALORAR SI ELIMINAR (PROBAR)
-      %p
-        = f.label :grupo, "Grupo"
-        = f.select :grupo_id, options_for_select(@grupos.map{|t| [t.nombre, t.id, :title => t.nombre]}), {include_blank: 'Ninguno'}, {:class => ''}
-
       = link_to("", :class => 'btn', :onclick => "$('#submit_alumno').click()", :remote => true) do
         ="Guardar"
 

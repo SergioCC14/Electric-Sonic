@@ -86,6 +86,20 @@ input {
   }
 }
 
+.help_login{
+  margin-top: 10px;
+  text-align:center;
+
+  .text_help {
+    display: inline-block;
+  }
+
+  .text_help:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
 .full_container {
   background-color: #C0C0C0;
   margin: 44px auto;

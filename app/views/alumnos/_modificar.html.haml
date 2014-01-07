@@ -9,13 +9,13 @@
           = f.text_field :id, :placeholder => "Nº Matricula", :disabled => true
         .box_fila
           .space_label= f.label :dni, "DNI"
-          = f.text_field :dni, :placeholder => "DNI"
+          = f.text_field :dni, :required => true, :placeholder => "DNI"
         .box_fila
           .space_label= f.label :nombre, "Nombre"
-          = f.text_field :nombre, :placeholder => "Nombre"
+          = f.text_field :nombre, :required => true, :placeholder => "Nombre"
         .box_fila
           .space_label= f.label :apellidos, "Apellidos"
-          = f.text_field :apellidos, :placeholder => "Apellidos"
+          = f.text_field :apellidos, :required => true, :placeholder => "Apellidos"
 
         .box_fila
           .space_label= f.label :tfg, "TFG"

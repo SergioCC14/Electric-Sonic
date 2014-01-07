@@ -16,7 +16,7 @@
 
           .box_fila
             .space_label= f.label :num_componetes, "Componentes"
-            = f.text_field :num_componentes, :placeholder => "Nº Componentes", :disabled => true, :style => 'width: 120px'
+            = f.text_field :num_componentes, :required => true, :placeholder => "Nº Componentes", :disabled => true, :style => 'width: 120px'
 
           .actions
             = link_to("", :class => 'btn', :onclick => "$('#submit_grupo_#{grupo.id}').click()", :remote => true) do

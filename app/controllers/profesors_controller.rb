@@ -57,7 +57,7 @@ class ProfesorsController < ApplicationController
     @profesor.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Profesors eliminado correctamente' }
+      format.html { redirect_to root_path, notice: 'Profesor eliminado correctamente' }
       format.json { head :no_content }
     end
   end

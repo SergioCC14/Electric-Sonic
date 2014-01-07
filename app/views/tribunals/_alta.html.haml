@@ -4,7 +4,7 @@
     = form_for(@tribunal) do |f|
       %p
         = f.label :lugar_examen, "Lugar del Examen"
-        = f.text_field :lugar_examen, :placeholder => "Lugar del examen"
+        = f.text_field :lugar_examen, :required => true, :placeholder => "Lugar del examen"
       
       %p
         = f.label :tfg, "Trabajo Fin de Grado"

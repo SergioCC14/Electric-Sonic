@@ -4,7 +4,7 @@
   = form_for(@grupo) do |f|
     %p
       = f.label :nombre, "Nombre"
-      = f.text_field :nombre, :placeholder => "Nombre"
+      = f.text_field :nombre, :required => true, :placeholder => "Nombre"
 
     %p
       - for alumno in @alumnos

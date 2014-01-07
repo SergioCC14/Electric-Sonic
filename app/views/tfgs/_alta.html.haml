@@ -5,13 +5,13 @@
     = form_for(@tfg) do |f|
       %p
         = f.label :tema, "Tema"
-        = f.text_field :tema, :placeholder => "Tema"
+        = f.text_field :tema, :required => true, :placeholder => "Tema"
 
         = f.text_field :fecha_comienzo, :style => 'display:none', :value => Time.now
 
       %p
         = f.label :alumno, "Alumno"
-        = f.select :alumno_id, options_for_select(@alumnos.map{|t| [t.nombre, t.id, :title => t.nombre]}), {include_blank: 'Ninguno'}, {:class => ''}
+        = f.select :alumno_id, options_for_select(@alumnos.map{|t| [t.nombre, t.id, :title => t.nombre]}), {}, {:class => ''}
 
       = link_to("", :class => 'btn', :onclick => "$('#submit_alumno').click()", :remote => true) do
         ="Guardar"

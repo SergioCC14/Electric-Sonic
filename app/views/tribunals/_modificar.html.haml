@@ -9,7 +9,7 @@
           = f.text_field :id, :placeholder => "Nº Tribunal", :disabled => true
         .box_fila
           .space_label= f.label :lugar_examen, "Lugar"
-          = f.text_field :lugar_examen, :placeholder => "Lugar del Examen"
+          = f.text_field :lugar_examen, :required => true, :placeholder => "Lugar del Examen"
         .box_fila
           .space_label= f.label :num_componentes, "Componentes"
           = f.text_field :num_componentes, :placeholder => "Nº Componentes", :disabled => true

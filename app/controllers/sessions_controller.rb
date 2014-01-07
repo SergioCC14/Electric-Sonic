@@ -6,13 +6,6 @@ class SessionsController < ApplicationController
   end
 
   def index
-    # if signed_in?
-    #   respond_to do |format|
-    #     format.html { redirect_to root_path }
-    #     format.js {  }
-    #   end     
-    # else
-
       @session = Session.new;
 
       respond_to do |format|
@@ -41,8 +34,7 @@ class SessionsController < ApplicationController
     else
       iniciar_sesion(user)
       self.current_user= user;
-
-      
+  
       respond_to do |format|
         format.html { redirect_to root_path }
         format.js {  }

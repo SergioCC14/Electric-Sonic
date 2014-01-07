@@ -3,7 +3,6 @@ module SessionsHelper
   # Crea la cookie para mantener la sesión y un Token para localizarla y validarla
   def iniciar_sesion(user)
     remember_token = User.new_remember_token
-
     cookies.permanent["TFCAut_remember_token"] = remember_token
     user.update_attribute(:remember_token, User.encrypt(remember_token))
     self.current_user = user
